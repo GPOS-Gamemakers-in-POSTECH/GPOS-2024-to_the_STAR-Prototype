@@ -35,7 +35,7 @@
 ## :fountain_pen: Authors
 
 - 기획 : [@박동현](https://github.com/RevGhb) | @배재륜
-- 프로그래밍 : [@남민규]((https://github.com/mgnam)) | [@박동현](https://github.com/RevGhb) | @배재륜 | [@이윤혁](https://github.com/a-nodi) | @전재영 | [@황찬기](https://github.com/DevMizeKR)
+- 프로그래밍 : [@남민규](https://github.com/mgnam) | [@박동현](https://github.com/RevGhb) | @배재륜 | [@이윤혁](https://github.com/a-nodi) | @전재영 | [@황찬기](https://github.com/DevMizeKR)
 
 
 ## :books: Documentation
