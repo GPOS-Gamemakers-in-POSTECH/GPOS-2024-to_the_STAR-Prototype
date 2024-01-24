@@ -24,6 +24,7 @@ public class scrt_dustpan : MonoBehaviour
     Transform player;
     SpriteRenderer spriteRenderer;
     GameObject attackObj;
+    public GameObject enemyAttack; //dustpanAttack 스크립트가 들어간 것으로 설정해야함
 
     // Start is called before the first frame update
     void Start()
@@ -72,15 +73,15 @@ public class scrt_dustpan : MonoBehaviour
 
     void Attack()
     {
-        if (player.transform.position.x - this.transform.position.x < -1*attackRange/2) { direction = -1; }
-        else if (player.transform.position.x - this.transform.position.x > attackRange / 2) { direction = 1; }
+        if (player.transform.position.x - this.transform.position.x < -1*attackRange/4) { direction = -1; }
+        else if (player.transform.position.x - this.transform.position.x > attackRange/4) { direction = 1; }
         else { direction = 0; }
 
         if (distance < attackRange && delay <= 0)
         {
             attackObj = Instantiate(enemyAttack, transform.position, Quaternion.identity);
-            attackObj.tag = "enemyWeapon";
-            attackObj.enemycode = 0;
+            attackObj.GetComponent<scrt_enemyAttack>().attack = attack;
+            attackObj.GetComponent<scrt_enemyAttack>().enemyCode = 0;
             delay = attackDelay;
         }
         if (delay <= attackDelay - attackTime)
@@ -90,7 +91,7 @@ public class scrt_dustpan : MonoBehaviour
 
     }
 
-    public void Damage(float damage) //플레이어 오브젝트에서 이 함수를 통해 데미지를 입힐 수 있음. 적절한 tag를 적마다 붙여 공격을 받는 적을 찾으면 됨
+    public void Damage(float damage) //플레이어 오브젝트에서 이 함수를 통해 데미지를 입힐 수 있음. enemy tag를 찾아서 공격과 충돌판정이 나는 경우 호출하면 됨
     {
         health -= damage;
     }
