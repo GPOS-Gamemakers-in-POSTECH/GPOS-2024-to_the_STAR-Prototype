@@ -14,6 +14,7 @@ public class scrt_dustpan : MonoBehaviour
     float detectionRange = 20f; //탐지범위
     float attackRange = 4f; //공격범위
     int attackDelay = 60; //공격딜레이
+    int attackTime = 20; //공격지속시간
 
     int state = 0; //0: normal, 1: alert, 2: stunned, 3: dead
     int delay = 0;
@@ -22,12 +23,14 @@ public class scrt_dustpan : MonoBehaviour
 
     Transform player;
     SpriteRenderer spriteRenderer;
+    GameObject attackObj;
 
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        player = GameObject.Find("player").transform;
+        player = GameObject.FindWithTag("player").transform;
+        gameObject.tag = "enemy";
     }
 
     // Update is called once per frame
@@ -69,14 +72,22 @@ public class scrt_dustpan : MonoBehaviour
 
     void Attack()
     {
-        if (player.transform.position.x - this.transform.position.x < 0) { direction = -1; }
-        else { direction = 1; }
+        if (player.transform.position.x - this.transform.position.x < -1*attackRange/2) { direction = -1; }
+        else if (player.transform.position.x - this.transform.position.x > attackRange / 2) { direction = 1; }
+        else { direction = 0; }
 
         if (distance < attackRange && delay <= 0)
         {
-            
+            attackObj = Instantiate(enemyAttack, transform.position, Quaternion.identity);
+            attackObj.tag = "enemyWeapon";
+            attackObj.enemycode = 0;
             delay = attackDelay;
         }
+        if (delay <= attackDelay - attackTime)
+        {
+            Destroy(attackObj);
+        }
+
     }
 
     public void Damage(float damage) //플레이어 오브젝트에서 이 함수를 통해 데미지를 입힐 수 있음. 적절한 tag를 적마다 붙여 공격을 받는 적을 찾으면 됨
