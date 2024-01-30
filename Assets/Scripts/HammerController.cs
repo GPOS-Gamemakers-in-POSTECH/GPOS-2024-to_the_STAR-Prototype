@@ -20,7 +20,7 @@ public class HammerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         if (Input.GetMouseButton(0))
         {
             chargeDamage += Time.deltaTime * 30;
@@ -44,9 +44,8 @@ public class HammerController : MonoBehaviour
             
             anim.SetBool("isCharge", false);
             anim.SetBool("isFullCharge", false);
-            // anim.SetBool("isAttack", false);
 
             chargeDamage = 0;
-        }   
+        }
     }
 }
