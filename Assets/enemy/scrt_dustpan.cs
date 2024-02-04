@@ -51,7 +51,12 @@ public class scrt_dustpan : MonoBehaviour
                 }
                 break;
             case 1: Move(); Attack(); break;
-            case 2: break;
+            case 2:
+                if (delay <= 0)
+                {
+                    state = 0;
+                }
+                    break;
             case 3: break;
         }
 
@@ -94,5 +99,11 @@ public class scrt_dustpan : MonoBehaviour
     public void Damage(float damage) //플레이어 오브젝트에서 이 함수를 통해 데미지를 입힐 수 있음. enemy tag를 찾아서 공격과 충돌판정이 나는 경우 호출하면 됨
     {
         health -= damage;
+    }
+
+    public void GetStunned(int time) //time 만큼 스턴에 걸리게 함. time프레임만큼 스턴에 걸림
+    {
+        state = 2;
+        delay = time;
     }
 }
