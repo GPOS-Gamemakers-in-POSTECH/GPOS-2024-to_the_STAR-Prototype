@@ -366,6 +366,7 @@ GameObject:
   - component: {fileID: 1214846610}
   - component: {fileID: 1214846609}
   - component: {fileID: 1214846611}
+  - component: {fileID: 1214846612}
   m_Layer: 0
   m_Name: dustpan
   m_TagString: Untagged
@@ -452,6 +453,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9a36fbf9d94d14fbead56cb983ebcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAttack: {fileID: 0}
+--- !u!95 &1214846612
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214846607}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed79ba07ff0e3e648a7b48f8e595f39c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1966393403
 GameObject:
   m_ObjectHideFlags: 0

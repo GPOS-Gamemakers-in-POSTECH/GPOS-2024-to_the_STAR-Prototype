@@ -11,7 +11,8 @@ public class scrt_dustpan : MonoBehaviour
     float attack = 20f; //공격력
     float health = 100f; //체력
     float speed = 2f; //이동속력
-    float detectionRange = 20f; //탐지범위
+    float detectionRangeX = 20f; //가로탐지범위
+    float detectionRangeY = 5f; //세로탐지범위
     float attackRange = 4f; //공격범위
     int attackDelay = 60; //공격딜레이
     int attackTime = 20; //공격지속시간
@@ -24,6 +25,7 @@ public class scrt_dustpan : MonoBehaviour
     Transform player;
     SpriteRenderer spriteRenderer;
     GameObject attackObj;
+    Animator animator;
     public GameObject enemyAttack; //dustpanAttack 스크립트가 들어간 것으로 설정해야함
 
     // Start is called before the first frame update
@@ -32,6 +34,7 @@ public class scrt_dustpan : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         player = GameObject.FindWithTag("player").transform;
         gameObject.tag = "enemy";
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -57,7 +60,7 @@ public class scrt_dustpan : MonoBehaviour
                     state = 0;
                 }
                     break;
-            case 3: break;
+            case 3: animator.SetBool("bool_death", true); break;
         }
 
         
@@ -66,10 +69,11 @@ public class scrt_dustpan : MonoBehaviour
     void Move()
     {
         transform.Translate(Vector3.right * direction * speed * Time.deltaTime, Space.World);
-        if (direction != 0) { spriteRenderer.flipX = (direction == 1); }
+        if (direction != 0) { spriteRenderer.flipX = (direction == 1); animator.SetBool("bool_move", true); }
+        else { animator.SetBool("bool_move", false); }
         
         distance=Vector3.Distance(transform.position, player.transform.position);
-        if (distance < detectionRange && Math.Abs(player.transform.position.y-this.transform.position.y)<detectionRange/2) {
+        if (Math.Abs(player.transform.position.x - this.transform.position.x) < detectionRangeX && Math.Abs(player.transform.position.y-this.transform.position.y)<detectionRangeY) {
             if (state != 1) { delay = 0; }
             state = 1; 
         }
@@ -88,6 +92,7 @@ public class scrt_dustpan : MonoBehaviour
             attackObj.GetComponent<scrt_enemyAttack>().attack = attack;
             attackObj.GetComponent<scrt_enemyAttack>().enemyCode = 0;
             delay = attackDelay;
+            animator.SetTrigger("trigger_attack");
         }
         if (delay <= attackDelay - attackTime)
         {
@@ -99,11 +104,13 @@ public class scrt_dustpan : MonoBehaviour
     public void Damage(float damage) //플레이어 오브젝트에서 이 함수를 통해 데미지를 입힐 수 있음. enemy tag를 찾아서 공격과 충돌판정이 나는 경우 호출하면 됨
     {
         health -= damage;
+        animator.SetTrigger("trigger_getAttacked");
     }
 
     public void GetStunned(int time) //time 만큼 스턴에 걸리게 함. time프레임만큼 스턴에 걸림
     {
         state = 2;
         delay = time;
+        animator.SetTrigger("trigger_getStunned");
     }
 }
