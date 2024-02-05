@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9a36fbf9d94d14fbead56cb983ebcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyAttack: {fileID: 0}
+  enemyAttack: {fileID: 1966393403}
 --- !u!95 &1214846612
 Animator:
   serializedVersion: 5
