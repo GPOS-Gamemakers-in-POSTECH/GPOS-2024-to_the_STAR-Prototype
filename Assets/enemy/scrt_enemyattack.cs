@@ -6,7 +6,7 @@ public class scrt_enemyAttack : MonoBehaviour
 {
     public float attack = 0;
     public float bulletSpeed = 0;
-    public int enemyCode = 0; //´õ½ºÆ®ÆÒ: 0  µå·Ð: 1
+    public int enemyCode = 0; //´õ½ºÆ®ÆÒ: 0  µå·Ð: 1  °ñ·½: 2
     public int lifeDuration = -1;
 
     int lifeTime = 0;
