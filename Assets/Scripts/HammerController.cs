@@ -57,8 +57,9 @@ public class HammerController : MonoBehaviour
                 StartCoroutine(Attack());
                 chargeDamage = 0;
             }
-w        }
+        }
     }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
