@@ -5,19 +5,23 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     // player data
+    private float health = 100.0f;
     private float moveSpeed = 5f;
+
+    private float stunResistance = 1.0f;
+    private float confusionResistance = 10.0f;
 
     // components
     private Rigidbody2D rb;
     private SpriteRenderer sr;
 
-    // child
+    // weapons
     private GameObject hammer;
 
-    // Start is called before the first frame update
     void Start()
     {
         gameObject.tag = "player";
+
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         hammer = transform.GetChild(0).gameObject;
@@ -42,7 +46,6 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
 

@@ -4,48 +4,102 @@ using UnityEngine;
 
 public class HammerController : MonoBehaviour
 {
+    // hammer animation
     private Animator anim;
-    private float baseDamage = 10.0f;
+
+    // components
+    private CircleCollider2D weaponCollider;
+
+    // hammer data
+    private float baseDamage = 25.0f;
+    private float maxDamage = 100.0f;
     private float chargeDamage = 0;
 
-    // Start is called before the first frame update
+    // state
+    private bool isAttackable = true;
+
+    // coroutine
+    Coroutine runningCoroutine = null;
+
     void Start()
     {
+        // gameObject.tag = "weapon";
+
         anim = GetComponent<Animator>();
+        weaponCollider = GetComponent<CircleCollider2D>();
+        weaponCollider.enabled = false;
     }
 
+    // for physics
     void FixedUpdate()
     {
     }
 
-    // Update is called once per frame
     void Update()
     {        
-        if (Input.GetMouseButton(0))
+        // Press the mouse button
+        if (Input.GetMouseButtonDown(0))
         {
-            chargeDamage += Time.deltaTime * 30;
-            anim.SetBool("isAttack", false);
-            anim.SetBool("isCharge", true);
-            Debug.Log("Charge Damage: " + chargeDamage);
-
-            if (chargeDamage >= 60)
-            {
-                anim.SetBool("isFullCharge", true);
-            }
+            if (isAttackable)
+                runningCoroutine = StartCoroutine(Charge());
         }
         
+        // Release the mouse button
         if (Input.GetMouseButtonUp(0))
         {
-            if (chargeDamage >= 60)
+            if (runningCoroutine != null)
             {
-                anim.SetBool("isAttack", true);
-                Debug.Log("Damage: " + (baseDamage + chargeDamage));
+                StopCoroutine(runningCoroutine);
             }
-            
-            anim.SetBool("isCharge", false);
-            anim.SetBool("isFullCharge", false);
 
-            chargeDamage = 0;
+            if (isAttackable)
+            {
+                StartCoroutine(Attack());
+                chargeDamage = 0;
+            }
+w        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Collision: " + other.gameObject.tag);
+        if (other.gameObject.tag == "enemy")
+        {
+            Debug.Log("Enemy Hit");
         }
+    }
+
+    IEnumerator Charge()
+    {
+        anim.SetTrigger("triggerCharge");
+        while (true)
+        {
+            chargeDamage += 2;
+            
+            if (chargeDamage >= 100)
+            {
+                anim.SetTrigger("triggerFullCharge");
+                yield break;
+            }
+
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+    
+    IEnumerator Attack()
+    {
+        // attack
+        isAttackable = false;
+        Debug.Log("Damage: " + (baseDamage + chargeDamage));
+        anim.SetTrigger("triggerAttack");
+        weaponCollider.enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        weaponCollider.enabled = false;
+
+        // cooldown
+        anim.SetTrigger("triggerSleep");
+        yield return new WaitForSeconds(3.0f);
+        anim.SetTrigger("triggerIdle");
+        isAttackable = true;
     }
 }
