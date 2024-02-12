@@ -25,7 +25,8 @@ public class scrt_golem : MonoBehaviour
     int delay = 0;
     int walkDelay = 0;
     int direction = 0;
-    int walkingState = 3; 
+    int walkingState = 3;
+    int walkingLegNum = 0;
     float distance = 0f;
     bool alertOn = false;
     bool attackOn = false;
@@ -103,19 +104,32 @@ public class scrt_golem : MonoBehaviour
             }
             else //idle상태일 경우의 설정
             {
-                direction = UnityEngine.Random.Range(-1, 2);
+                direction = UnityEngine.Random.Range(-1, 4);
+                if(direction!=1 && direction != -1) { direction = 0; }
             }
         }
 
         if (!attackOn)
         {
-            switch (walkingState) //0: 앞쪽다리 들어옮김 1: 몸체가 움직임 2: 뒷쪽다리 들어옮김 3, 4: 휴식
+            switch (walkingState) //0: 앞쪽다리 들어옮김 1: 잠시 정지 2: 뒷쪽다리 들어옮김 3, 4: 휴식
             {
                 case 0:
+                    if (direction == -1) { leftLeg.transform.position += new Vector3(-1 * speed, -1 * speed / walkLength * Math.Sign(walkingLegNum * 2 - walkLength / speed), 0); }
+                    else if (direction == 1) { rightLeg.transform.position += new Vector3(speed, -1 * speed / walkLength * Math.Sign(walkingLegNum * 2 - walkLength / speed), 0); }
+                    this.transform.position += new Vector3(direction * speed / 2, 0, 0);
+                    if (walkingLegNum>=walkLength/speed) { walkDelay = (int)(walkLength / speed); walkingLegNum = 0; walkingState = 1; }
+                    walkingLegNum++;
                     break;
                 case 1:
+                    walkDelay--;
+                    if (walkDelay == 0) { walkingState = 2; }
                     break;
                 case 2:
+                    if (direction == -1) { rightLeg.transform.position += new Vector3(-1 * speed, -1 * speed / walkLength * Math.Sign(walkingLegNum * 2 - walkLength / speed), 0); }
+                    else if (direction == 1) { leftLeg.transform.position += new Vector3(speed, -1 * speed / walkLength * Math.Sign(walkingLegNum * 2 - walkLength / speed), 0); }
+                    this.transform.position += new Vector3(direction * speed / 2, 0, 0);
+                    if (walkingLegNum > walkLength / speed) { walkingLegNum = 0; walkingState = 3; }
+                    walkingLegNum++;
                     break;
                 case 3:
                     leftLeg.transform.position = transform.position + new Vector3(-1 * attackX, golemLegY, 0);
