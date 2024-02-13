@@ -63,7 +63,6 @@ public class HammerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Collision: " + other.gameObject.tag);
         if (other.gameObject.tag == "enemy")
         {
             Debug.Log("Enemy Hit");
