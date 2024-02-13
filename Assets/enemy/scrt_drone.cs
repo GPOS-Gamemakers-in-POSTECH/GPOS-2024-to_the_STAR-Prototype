@@ -17,12 +17,14 @@ public class scrt_drone : MonoBehaviour
     float bulletSpeed = 5f; //총알의 속도
     int attackDelay = 60; //공격딜레이
     int attackTime = 20; //공격지속시간
+    public int floorLoc = 0; //딛고 있는 바닥의 위치, 0: 바닥, 1: 왼쪽벽 2: 천장 3: 오른쪽벽
 
     int state = 0; //0: normal, 1: alert, 2: stunned, 3: dead
     int delay = 0;
     int direction = 0;
     float distance = 0f;
     bool alertOn = false;
+    Vector3 moveVector = Vector3.right;
 
     Transform player;
     SpriteRenderer spriteRenderer;
@@ -37,6 +39,11 @@ public class scrt_drone : MonoBehaviour
         player = GameObject.FindWithTag("player").transform;
         gameObject.tag = "enemy";
         animator = GetComponent<Animator>();
+
+        if (floorLoc % 2 == 0) { moveVector = Vector3.right; }
+        else { moveVector = Vector3.up; }
+
+        if (floorLoc != 0) { spriteRenderer.transform.localRotation = Quaternion.Euler(0f, 0f, (4 - floorLoc) * 90f); }
 
     }
 
@@ -81,12 +88,23 @@ public class scrt_drone : MonoBehaviour
     void Move()
     {
 
-        alertOn = ((Math.Abs(player.transform.position.x - this.transform.position.x) < detectionRangeX) 
-            && (Math.Abs(player.transform.position.y - this.transform.position.y) < detectionRangeY) && (player.transform.position.y < this.transform.position.y));
-        if (direction != 0) { spriteRenderer.flipX = (direction == 1); }
+        if (floorLoc % 2 == 0) //x방향으로 움직일 경우 (바닥, 천장)
+        {
+            alertOn = (Math.Abs(player.transform.position.x - this.transform.position.x) < detectionRangeX) && (Math.Abs(player.transform.position.y - this.transform.position.y) < detectionRangeY);
+            //바닥이면 0, 천장이면 2이므로 floorLoc-1의 부호가 음수면 바닥, 양수면 천장. 이 부호와 플레이어와 자신의 y좌표 차이의 부호가 같아야함
+            if(floorLoc-1 != Math.Sign(player.transform.position.y - this.transform.position.y)) { alertOn = false; }
+            if (direction != 0) { spriteRenderer.flipX = (direction == (floorLoc * -1) + 1); }
+        }
+        else //y방향으로 움직일 경우 (벽)
+        {
+            alertOn = (Math.Abs(player.transform.position.y - this.transform.position.y) < detectionRangeX) && (Math.Abs(player.transform.position.x - this.transform.position.x) < detectionRangeY);
+            //마찬가지로 왼쪽이 1, 오른쪽이 3, -2의 부호와 x좌표 차이의 부호가 같아야함
+            if (floorLoc - 2 != Math.Sign(player.transform.position.x - this.transform.position.x)) { alertOn = false; }
+            if (direction != 0) { spriteRenderer.flipX = (direction == floorLoc - 2); }
+        }
 
-        transform.Translate(Vector3.right * direction * speed * Time.deltaTime, Space.World);
-                
+        transform.Translate(moveVector * direction * speed * Time.deltaTime, Space.World);
+
         if (direction != 0) { animator.SetBool("bool_move", true); }
         else { animator.SetBool("bool_move", false); }
         
@@ -105,13 +123,22 @@ public class scrt_drone : MonoBehaviour
     void Attack()
     {
 
-        if (player.transform.position.x - this.transform.position.x < -1 * attackRange / 4) { direction = -1; }
-        else if (player.transform.position.x - this.transform.position.x > attackRange / 4) { direction = 1; }
-        else { direction = 0; }
+        if (floorLoc % 2 == 0)
+        {
+            if (player.transform.position.x - this.transform.position.x < -1 * attackRange / 4) { direction = -1; }
+            else if (player.transform.position.x - this.transform.position.x > attackRange / 4) { direction = 1; }
+            else { direction = 0; }
+        }
+        else
+        {
+            if (player.transform.position.y - this.transform.position.y < -1 * attackRange / 4) { direction = -1; }
+            else if (player.transform.position.y - this.transform.position.y > attackRange / 4) { direction = 1; }
+            else { direction = 0; }
+        }
 
         if (distance < attackRange && delay <= 0)
         {
-            attackObj = Instantiate(enemyAttack, transform.position, Quaternion.Euler(0f, 0f, 0f));
+            attackObj = Instantiate(enemyAttack, transform.position, Quaternion.Euler(0f, 0f, (4 - floorLoc) * 90f));
             attackObj.GetComponent<scrt_enemyAttack>().attack = attack;
             attackObj.GetComponent<scrt_enemyAttack>().enemyCode = 1;
             attackObj.GetComponent<scrt_enemyAttack>().bulletSpeed = bulletSpeed;

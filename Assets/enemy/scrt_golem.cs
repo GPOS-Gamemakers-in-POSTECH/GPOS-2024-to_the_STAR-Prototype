@@ -14,12 +14,13 @@ public class scrt_golem : MonoBehaviour
     float attackX = 4.5f; //공격 오브젝트를 만들 좌표, 기준점은 golemLeg과 동일
     float attackY = -3f;
     float detectionRangeX = 40f; //가로탐지범위
-    float detectionRangeY = 5f; //세로탐지범위
+    float detectionRangeY = 15f; //세로탐지범위
     float attackRange = 10f; //공격범위
     float attackAngle = 60f; //공격시 다리를 들 최대 각도
     float attackLegSpeed = 0.3f; //공격시 다리를 들 속도
     int attackDelay = 60; //공격후 이동 딜레이
     int attackTime = 20; //공격지속시간
+    public int floorLoc = 0; //딛고 있는 바닥의 위치, 0: 바닥, 1: 왼쪽벽 2: 천장 3: 오른쪽벽
 
     int state = 0; //0: normal, 1: alert, 2: stunned, 3: dead
     int delay = 0;
@@ -30,6 +31,8 @@ public class scrt_golem : MonoBehaviour
     float distance = 0f;
     bool alertOn = false;
     bool attackOn = false;
+    bool attackLeg = false; //false: left  true: right
+    bool flipXbool = false;
     Vector3 moveVector = Vector3.right;
 
     Transform player;
@@ -38,9 +41,19 @@ public class scrt_golem : MonoBehaviour
     GameObject leftLeg;
     GameObject rightLeg;
     Animator animator;
+    Quaternion rotateAngle;
+    Vector3 leftLegPos;
+    Vector3 rightLegPos;
+    Vector3 moveVec1;
+    Vector3 moveVec2;
 
     public GameObject golemLeg; //golemLeg 스크립트가 들어간 것으로 설정해야함
     public GameObject enemyAttack; //dustpanAttack 스크립트가 들어간 것으로 설정해야함
+
+    Vector3 rotateVector(float x, float y)
+    {
+        return new Vector3(x*(floorLoc%2-1)*(floorLoc-1)+y*(floorLoc%2)*(floorLoc-2)*(-1),x*(floorLoc%2)*(floorLoc-2)+y*(floorLoc%2-1)*(floorLoc-1), 0f);
+    }
 
     void Start()
     {
@@ -48,9 +61,16 @@ public class scrt_golem : MonoBehaviour
         player = GameObject.FindWithTag("player").transform;
         gameObject.tag = "enemy";
         animator = GetComponent<Animator>();
+        rotateAngle = Quaternion.Euler(0f, 0f, (4 - floorLoc) * 90f);
+        leftLegPos = rotateVector(-1 * golemLegX, golemLegY);
+        rightLegPos = rotateVector(golemLegX, golemLegY);
 
-        leftLeg = Instantiate(golemLeg, transform.position + new Vector3(-1 * golemLegX, golemLegY, 0), Quaternion.identity);
-        rightLeg = Instantiate(golemLeg, transform.position + new Vector3(golemLegX, golemLegY, 0), Quaternion.identity);
+        if (floorLoc % 2 == 0) { moveVector = Vector3.right; }
+        else { moveVector = Vector3.up; }
+        if (floorLoc != 0) { spriteRenderer.transform.localRotation = rotateAngle; }
+
+        leftLeg = Instantiate(golemLeg, transform.position + leftLegPos, rotateAngle);
+        rightLeg = Instantiate(golemLeg, transform.position + rightLegPos, rotateAngle);
         rightLeg.GetComponent<SpriteRenderer>().flipX = true;
     }
 
@@ -75,7 +95,24 @@ public class scrt_golem : MonoBehaviour
 
     void Move()
     {
-        alertOn = (Math.Abs(player.transform.position.x - transform.position.x) < detectionRangeX) && (Math.Abs(player.transform.position.y - transform.position.y) < detectionRangeY); //alert판정
+        if (floorLoc % 2 == 0) //x방향으로 움직일 경우 (바닥, 천장)
+        {
+            alertOn = (Math.Abs(player.transform.position.x - this.transform.position.x) < detectionRangeX) && (Math.Abs(player.transform.position.y - this.transform.position.y) < detectionRangeY);
+            if (direction != 0) { flipXbool = (direction == (floorLoc * -1) + 1); }
+        }
+        else //y방향으로 움직일 경우 (벽)
+        {
+            alertOn = (Math.Abs(player.transform.position.y - this.transform.position.y) < detectionRangeX) && (Math.Abs(player.transform.position.x - this.transform.position.x) < detectionRangeY);
+            if (direction != 0) { flipXbool = (direction == (floorLoc * -1) + 2); }
+        }
+
+        if (floorLoc >= 2)
+        {
+            if(flipXbool) { flipXbool = false; }
+            else { flipXbool = true; }  
+        }
+
+        spriteRenderer.flipX = flipXbool;
 
         if (alertOn) //alert상태로의 변경
         {
@@ -98,25 +135,33 @@ public class scrt_golem : MonoBehaviour
         {
             if (alertOn) //alert상태일 경우의 설정
             {
-                if (player.transform.position.x - this.transform.position.x < -1 * attackRange / 4) { direction = -1; }
-                else if (player.transform.position.x - this.transform.position.x > attackRange / 4) { direction = 1; }
-                else { direction = 0; }
+                if (floorLoc % 2 == 0)
+                {
+                    if (player.transform.position.x - this.transform.position.x < -1 * walkLength/2f) { direction = 1 * (floorLoc-1); }
+                    else if (player.transform.position.x - this.transform.position.x > walkLength/2f) { direction = -1 * (floorLoc-1); }
+                    else { direction = 0; }
+                }
+                else
+                {
+                    if (player.transform.position.y - this.transform.position.y < -1 * walkLength/2f) { direction = -1 * (floorLoc-2); }
+                    else if (player.transform.position.y - this.transform.position.y > walkLength/2f) { direction = 1 * (floorLoc-2); }
+                    else { direction = 0; }
+                }
             }
-            else //idle상태일 경우의 설정
-            {
-                direction = UnityEngine.Random.Range(-1, 4);
-                if(direction!=1 && direction != -1) { direction = 0; }
-            }
+
         }
 
         if (!attackOn)
         {
+            moveVec1 = rotateVector(-1 * speed, -1 * speed / walkLength * Math.Sign(walkingLegNum * 2 - walkLength / speed));
+            moveVec2 = rotateVector(speed, -1 * speed / walkLength * Math.Sign(walkingLegNum * 2 - walkLength / speed));
+
             switch (walkingState) //0: 앞쪽다리 들어옮김 1: 잠시 정지 2: 뒷쪽다리 들어옮김 3, 4: 휴식
             {
                 case 0:
-                    if (direction == -1) { leftLeg.transform.position += new Vector3(-1 * speed, -1 * speed / walkLength * Math.Sign(walkingLegNum * 2 - walkLength / speed), 0); }
-                    else if (direction == 1) { rightLeg.transform.position += new Vector3(speed, -1 * speed / walkLength * Math.Sign(walkingLegNum * 2 - walkLength / speed), 0); }
-                    this.transform.position += new Vector3(direction * speed / 2, 0, 0);
+                    if (direction == -1) { leftLeg.transform.position += moveVec1; }
+                    else if (direction == 1) { rightLeg.transform.position += moveVec2; }
+                    this.transform.position += rotateVector(direction * speed / 2, 0);
                     if (walkingLegNum>=walkLength/speed) { walkDelay = (int)(walkLength / speed); walkingLegNum = 0; walkingState = 1; }
                     walkingLegNum++;
                     break;
@@ -125,17 +170,22 @@ public class scrt_golem : MonoBehaviour
                     if (walkDelay == 0) { walkingState = 2; }
                     break;
                 case 2:
-                    if (direction == -1) { rightLeg.transform.position += new Vector3(-1 * speed, -1 * speed / walkLength * Math.Sign(walkingLegNum * 2 - walkLength / speed), 0); }
-                    else if (direction == 1) { leftLeg.transform.position += new Vector3(speed, -1 * speed / walkLength * Math.Sign(walkingLegNum * 2 - walkLength / speed), 0); }
-                    this.transform.position += new Vector3(direction * speed / 2, 0, 0);
+                    if (direction == -1) { rightLeg.transform.position += moveVec1; }
+                    else if (direction == 1) { leftLeg.transform.position += moveVec2; }
+                    this.transform.position += rotateVector(direction * speed / 2, 0);
                     if (walkingLegNum > walkLength / speed) { walkingLegNum = 0; walkingState = 3; }
                     walkingLegNum++;
                     break;
                 case 3:
-                    leftLeg.transform.position = transform.position + new Vector3(-1 * attackX, golemLegY, 0);
-                    rightLeg.transform.position = transform.position + new Vector3(golemLegX, golemLegY, 0);
+                    leftLeg.transform.position = transform.position + leftLegPos;
+                    rightLeg.transform.position = transform.position + rightLegPos;
                     delay = 60;
                     walkingState = 4;
+                    if (!alertOn) //idle상태일 경우의 direction 설정
+                    {
+                        direction = UnityEngine.Random.Range(-1, 4);
+                        if (direction != 1 && direction != -1) { direction = 0; }
+                    }
                     break;
                 case 4:
                     if (delay <= 0 && distance >= attackRange) { walkingState = 0; }
@@ -152,7 +202,27 @@ public class scrt_golem : MonoBehaviour
 
         if (attackOn)
         {
-            if (player.transform.position.x - this.transform.position.x < 0) //왼쪽에 있을 때 공격
+            switch(floorLoc)
+            {
+                case 0:
+                    if (player.transform.position.x - this.transform.position.x < 0) { attackLeg = false; }
+                    else { attackLeg = true; }
+                    break;
+                case 1:
+                    if (player.transform.position.y - this.transform.position.y < 0) { attackLeg = true; }
+                    else { attackLeg = false; }
+                    break;
+                case 2:
+                    if (player.transform.position.x - this.transform.position.x < 0) { attackLeg = true; }
+                    else { attackLeg = false; }
+                    break;
+                case 3:
+                    if (player.transform.position.y - this.transform.position.y < 0) { attackLeg = false; }
+                    else { attackLeg = true; }
+                    break;
+            }
+
+            if (!attackLeg) //왼쪽에 있을 때 공격
             {
                 leftLeg.transform.Rotate(0f, 0f, -1 * attackLegSpeed);
             }
@@ -163,10 +233,16 @@ public class scrt_golem : MonoBehaviour
 
             if(Math.Abs(attackLegSpeed * delay) >= attackAngle) //다리를 순식간에 내려놓으며 공격오브젝트 생성
             {
-                if (player.transform.position.x - this.transform.position.x < 0) { leftLeg.transform.Rotate(0f, 0f, -1 * attackLegSpeed * delay); }
+                if (!attackLeg) { leftLeg.transform.Rotate(0f, 0f, -1 * attackLegSpeed * delay); }
                 else { rightLeg.transform.Rotate(0f, 0f, attackLegSpeed * delay); }
-                attackObj = Instantiate(enemyAttack, transform.position 
-                    + new Vector3((player.transform.position.x - this.transform.position.x)/Math.Abs(player.transform.position.x - this.transform.position.x) * attackX, attackY, 0), Quaternion.Euler(0f, 0f, 0f));
+                if (floorLoc % 2 == 0)
+                {
+                    attackObj = Instantiate(enemyAttack, transform.position + rotateVector((floorLoc-1)*Math.Sign(-1 * player.transform.position.x + this.transform.position.x) * attackX, attackY), rotateAngle);
+                }
+                else
+                {
+                    attackObj = Instantiate(enemyAttack, transform.position + rotateVector((floorLoc-2)*Math.Sign(player.transform.position.y - this.transform.position.y) * attackX, attackY), rotateAngle);
+                }
                 attackObj.GetComponent<scrt_enemyAttack>().attack = attack;
                 attackObj.GetComponent<scrt_enemyAttack>().enemyCode = 0;
                 attackObj.GetComponent<scrt_enemyAttack>().lifeDuration = attackTime;
@@ -189,7 +265,7 @@ public class scrt_golem : MonoBehaviour
         delay = time;
         animator.SetTrigger("trigger_getStunned");
         walkingState = 3;
-        leftLeg.transform.position = transform.position + new Vector3(-1 * golemLegX, golemLegY, 0);
-        rightLeg.transform.position = transform.position + new Vector3(golemLegX, golemLegY, 0);
+        leftLeg.transform.position = transform.position + leftLegPos;
+        rightLeg.transform.position = transform.position + rightLegPos;
     }
 }
