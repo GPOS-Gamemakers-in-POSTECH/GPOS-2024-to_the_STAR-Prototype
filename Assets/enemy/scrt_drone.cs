@@ -5,15 +5,16 @@ using System.Diagnostics;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class scrt_dustpan : MonoBehaviour
+public class scrt_drone : MonoBehaviour
 {
     //능력치
     float attack = 20f; //공격력
     float health = 100f; //체력
     float speed = 2f; //이동속력
     float detectionRangeX = 20f; //가로탐지범위
-    float detectionRangeY = 5f; //세로탐지범위
-    float attackRange = 4f; //공격범위
+    float detectionRangeY = 10f; //세로탐지범위
+    float attackRange = 10f; //공격범위
+    float bulletSpeed = 5f; //총알의 속도
     int attackDelay = 60; //공격딜레이
     int attackTime = 20; //공격지속시간
     public int floorLoc = 0; //딛고 있는 바닥의 위치, 0: 바닥, 1: 왼쪽벽 2: 천장 3: 오른쪽벽
@@ -43,6 +44,7 @@ public class scrt_dustpan : MonoBehaviour
         else { moveVector = Vector3.up; }
 
         if (floorLoc != 0) { spriteRenderer.transform.localRotation = Quaternion.Euler(0f, 0f, (4 - floorLoc) * 90f); }
+
     }
 
     // Update is called once per frame
@@ -85,32 +87,34 @@ public class scrt_dustpan : MonoBehaviour
 
     void Move()
     {
+
         if (floorLoc % 2 == 0) //x방향으로 움직일 경우 (바닥, 천장)
         {
             alertOn = (Math.Abs(player.transform.position.x - this.transform.position.x) < detectionRangeX) && (Math.Abs(player.transform.position.y - this.transform.position.y) < detectionRangeY);
-            if (direction != 0) { spriteRenderer.flipX = (direction == (floorLoc*-1)+1); }
+            //바닥이면 0, 천장이면 2이므로 floorLoc-1의 부호가 음수면 바닥, 양수면 천장. 이 부호와 플레이어와 자신의 y좌표 차이의 부호가 같아야함
+            if(floorLoc-1 != Math.Sign(player.transform.position.y - this.transform.position.y)) { alertOn = false; }
+            if (direction != 0) { spriteRenderer.flipX = (direction == (floorLoc * -1) + 1); }
         }
         else //y방향으로 움직일 경우 (벽)
         {
             alertOn = (Math.Abs(player.transform.position.y - this.transform.position.y) < detectionRangeX) && (Math.Abs(player.transform.position.x - this.transform.position.x) < detectionRangeY);
-            if (direction != 0) { spriteRenderer.flipX = (direction == floorLoc-2); }
+            //마찬가지로 왼쪽이 1, 오른쪽이 3, -2의 부호와 x좌표 차이의 부호가 같아야함
+            if (floorLoc - 2 != Math.Sign(player.transform.position.x - this.transform.position.x)) { alertOn = false; }
+            if (direction != 0) { spriteRenderer.flipX = (direction == floorLoc - 2); }
         }
-        
+
         transform.Translate(moveVector * direction * speed * Time.deltaTime, Space.World);
-        
-        
+
         if (direction != 0) { animator.SetBool("bool_move", true); }
         else { animator.SetBool("bool_move", false); }
         
         distance=Vector3.Distance(transform.position, player.transform.position);
-        if (alertOn)
-        {
+        if (alertOn) {
             if (state != 1) { delay = 0; }
             state = 1;
             animator.SetBool("bool_alert", true);
         }
-        else
-        {
+        else { 
             state = 0;
             animator.SetBool("bool_alert", false);
         }
@@ -118,6 +122,7 @@ public class scrt_dustpan : MonoBehaviour
 
     void Attack()
     {
+
         if (floorLoc % 2 == 0)
         {
             if (player.transform.position.x - this.transform.position.x < -1 * attackRange / 4) { direction = -1; }
@@ -133,9 +138,10 @@ public class scrt_dustpan : MonoBehaviour
 
         if (distance < attackRange && delay <= 0)
         {
-            attackObj = Instantiate(enemyAttack, transform.position, Quaternion.Euler(0f, 0f, (4-floorLoc)*90f));
+            attackObj = Instantiate(enemyAttack, transform.position, Quaternion.Euler(0f, 0f, (4 - floorLoc) * 90f));
             attackObj.GetComponent<scrt_enemyAttack>().attack = attack;
-            attackObj.GetComponent<scrt_enemyAttack>().enemyCode = 0;
+            attackObj.GetComponent<scrt_enemyAttack>().enemyCode = 1;
+            attackObj.GetComponent<scrt_enemyAttack>().bulletSpeed = bulletSpeed;
             attackObj.GetComponent<scrt_enemyAttack>().lifeDuration = attackTime;
             delay = attackDelay;
             animator.SetTrigger("trigger_attack");
