@@ -11,8 +11,6 @@ public class scrt_lever : MonoBehaviour
     public float oby;
     public GameObject whatObj; //뭘 없애고 만들지 지정
 
-    bool valid = true;
-
     SpriteRenderer spriteRenderer;
 
     GameObject relatedObj;
@@ -37,17 +35,15 @@ public class scrt_lever : MonoBehaviour
 
     public void interAct() //상호작용을 할 때 해당 변수를 호출하면 됨
     {
-        if (valid)
+        if (leverCode == 0) //제거
         {
-            if (leverCode == 0) //제거
-            {
-                Destroy(relatedObj);
-            }
-            else //생성
-            {
-                relatedObj = Instantiate(whatObj, new Vector3(obx, oby, 0f), Quaternion.Euler(0f, 0f, (4 - remoteFloorLoc) * 90f));
-            }
-            valid = false;
+            Destroy(relatedObj);
+            leverCode = 1;
+        }
+        else //생성
+        {
+            relatedObj = Instantiate(whatObj, new Vector3(obx, oby, 0f), Quaternion.Euler(0f, 0f, (4 - remoteFloorLoc) * 90f));
+            leverCode = 0;
         }
     }
 }
