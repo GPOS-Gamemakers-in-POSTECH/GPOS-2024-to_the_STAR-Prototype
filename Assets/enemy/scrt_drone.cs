@@ -136,7 +136,7 @@ public class scrt_drone : MonoBehaviour, IEnemyCommon
             else { direction = 0; }
         }
 
-        if (distance < attackRange && delay <= 0)
+        if (distance < attackRange && delay <= 0 && alertOn)
         {
             attackObj = Instantiate(enemyAttack, transform.position, Quaternion.Euler(0f, 0f, (4 - floorLoc) * 90f));
             attackObj.GetComponent<scrt_enemyAttack>().attack = attack;
