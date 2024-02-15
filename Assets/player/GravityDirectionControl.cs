@@ -16,7 +16,7 @@ public class GravityDirectionControl : MonoBehaviour
 
     }
 
-    public void UpdateGravity()
+    public void UpdateGravityVector()
     {
         if (PlayerState.gravitySourceVector == null) return;
 
