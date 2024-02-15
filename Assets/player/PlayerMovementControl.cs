@@ -5,44 +5,12 @@ using UnityEngine;
 public class PlayerMovementControl : MonoBehaviour
 {
 
-    [Header("Input KeyCodes")]
-    [SerializeField]
-    private KeyCode keyCodeGoLeft = KeyCode.A;
-    [SerializeField]
-    private KeyCode keyCodeGoRight = KeyCode.D;
-    [SerializeField]
-    private KeyCode keyCodeInteraction = KeyCode.E;
-    [SerializeField]
-    private KeyCode keyCodeUnarm = KeyCode.X;
-    [SerializeField]
-    private KeyCode keyCodeSelectArm = KeyCode.Z;
-    [SerializeField]
-    private KeyCode keyCodeFlameThrowerAlpha = KeyCode.Alpha1;
-    [SerializeField]
-    private KeyCode keyCodeFlameThrowerKeypad = KeyCode.Keypad1;
-    [SerializeField]
-    private KeyCode keyCodeGrabAlpha = KeyCode.Alpha2;
-    [SerializeField]
-    private KeyCode keyCodeGrabKeypad = KeyCode.Keypad2;
-    [SerializeField]
-    private KeyCode keyCodeHammerAlpha = KeyCode.Alpha3;
-    [SerializeField]
-    private KeyCode keyCodeHammerKeypad = KeyCode.Keypad3;
-    [SerializeField]
-    private KeyCode keyCodeWeaponPrimaryUse = KeyCode.Mouse1;
-    [SerializeField]
-    private KeyCode keyCodeWeaponSecondaryUse = KeyCode.Mouse2;
-    [SerializeField]
-    private KeyCode keyCodeDash1 = KeyCode.LeftShift;
-    [SerializeField]
-    private KeyCode keyCodeDash2 = KeyCode.RightShift;
-    [SerializeField]
-    private KeyCode keyCodePause = KeyCode.Escape;
+    public Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -50,4 +18,36 @@ public class PlayerMovementControl : MonoBehaviour
     {
         
     }
+
+    void FixedUpdate()
+    {
+        applyGravity(PlayerState.gravitentialForce);
+
+        return;
+    }
+
+    public void MoveLeft(float moveSpeed)
+    {
+        Vector2 leftVector = new Vector2(PlayerState.gravityVector.y, -PlayerState.gravityVector.x);
+        transform.Translate(leftVector);
+
+        return;
+    }
+
+    public void MoveRight(float moveSpeed)
+    {
+        Vector2 rightVector = new Vector2(-PlayerState.gravityVector.y, -PlayerState.gravityVector.x);
+        transform.Translate(rightVector);
+
+        return;
+    }
+
+    void applyGravity(float gravitentialForce)
+    {
+        rb.AddForce(PlayerState.gravityVector * gravitentialForce);
+
+        return;
+    }
+
+
 }
