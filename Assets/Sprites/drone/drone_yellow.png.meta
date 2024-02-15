@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 009880ef15eefa44ab5349b84d694f9d
+guid: 936758e05105fee4095a33f6b38b1ecb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,19 +81,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,10 +113,10 @@ TextureImporter:
       name: drone_yellow_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 2
+        y: 13
+        width: 28
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bef40e3d0c48f84baa26225e755615e
-      internalID: -1310988814
+      spriteID: 5eb482e440b6b834c9c175255c24dc91
+      internalID: 344752284
       vertices: []
       indices: 
       edges: []
@@ -147,10 +134,10 @@ TextureImporter:
       name: drone_yellow_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 34
+        y: 14
+        width: 28
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25d6a483c795fc64c988c6e9e64955d6
-      internalID: -705439052
+      spriteID: 120b24bdde4f68d43986812996e55e98
+      internalID: -2106649890
       vertices: []
       indices: 
       edges: []
@@ -175,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      drone_yellow_0: -1310988814
-      drone_yellow_1: -705439052
+      drone_yellow_0: 344752284
+      drone_yellow_1: -2106649890
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

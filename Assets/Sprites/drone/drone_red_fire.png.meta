@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 19cafb3ccda167348ba0bc0a4e2a8666
+guid: 3133c63c5d491744b8fdd08fd931f0d9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,19 +81,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,19 +113,19 @@ TextureImporter:
       name: drone_red_fire_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 2
+        y: 13
+        width: 28
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51944e668a492cb4e813ca39bfa448d4
-      internalID: -1915962732
+      spriteID: 3d22a72967b8f9b4ab3a22dcb241de18
+      internalID: 1819553184
       vertices: []
       indices: 
       edges: []
@@ -147,19 +134,19 @@ TextureImporter:
       name: drone_red_fire_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 35
+        y: 13
+        width: 28
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d26b1dbd9f05a340a64480c7171da6c
-      internalID: 896951735
+      spriteID: de977c72a61069a4b9af8d1f94d00044
+      internalID: 1049955749
       vertices: []
       indices: 
       edges: []
@@ -175,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      drone_red_fire_0: -1915962732
-      drone_red_fire_1: 896951735
+      drone_red_fire_0: 1819553184
+      drone_red_fire_1: 1049955749
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
