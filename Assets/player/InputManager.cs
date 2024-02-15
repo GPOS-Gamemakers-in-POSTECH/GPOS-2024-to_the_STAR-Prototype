@@ -61,7 +61,7 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetKeyDown(keyCodeInteraction))
         {
-            interactControl.interact();
+            interactControl.Interact();
         }
 
         if (Input.GetKeyDown(keyCodeUnarm))
