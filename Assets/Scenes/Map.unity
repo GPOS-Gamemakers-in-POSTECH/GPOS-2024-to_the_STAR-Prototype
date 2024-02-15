@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7782755}
   - component: {fileID: 7782756}
+  - component: {fileID: 7782758}
+  - component: {fileID: 7782757}
   m_Layer: 0
   m_Name: DroneC
   m_TagString: Untagged
@@ -204,9 +206,44 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7782757
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7782754}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b1212f4fe538f5643a07f47792b84863, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7782758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7782754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaad0744b47c13445985927657572c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  enemyAttack: {fileID: 0}
 --- !u!1 &325887605
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +254,8 @@ GameObject:
   m_Component:
   - component: {fileID: 325887607}
   - component: {fileID: 325887606}
+  - component: {fileID: 325887609}
+  - component: {fileID: 325887608}
   m_Layer: 0
   m_Name: DustpanG
   m_TagString: Untagged
@@ -273,7 +312,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &325887607
@@ -291,6 +330,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 506094892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &325887608
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325887605}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5c90b093da69b0499ca767155b1252e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &325887609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325887605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9a36fbf9d94d14fbead56cb983ebcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  enemyAttack: {fileID: 0}
 --- !u!1 &336891730
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +375,8 @@ GameObject:
   m_Component:
   - component: {fileID: 336891732}
   - component: {fileID: 336891731}
+  - component: {fileID: 336891734}
+  - component: {fileID: 336891733}
   m_Layer: 0
   m_Name: DustpanE
   m_TagString: Untagged
@@ -357,7 +433,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &336891732
@@ -375,6 +451,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 506094892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &336891733
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336891730}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5c90b093da69b0499ca767155b1252e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &336891734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336891730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9a36fbf9d94d14fbead56cb983ebcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  enemyAttack: {fileID: 0}
 --- !u!1 &337583553
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +496,8 @@ GameObject:
   m_Component:
   - component: {fileID: 337583555}
   - component: {fileID: 337583554}
+  - component: {fileID: 337583557}
+  - component: {fileID: 337583556}
   m_Layer: 0
   m_Name: DustpanD
   m_TagString: Untagged
@@ -441,7 +554,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &337583555
@@ -459,6 +572,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 506094892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &337583556
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337583553}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5c90b093da69b0499ca767155b1252e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &337583557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337583553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9a36fbf9d94d14fbead56cb983ebcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  enemyAttack: {fileID: 0}
 --- !u!1 &359303601
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 359303603}
   - component: {fileID: 359303602}
+  - component: {fileID: 359303604}
   m_Layer: 0
   m_Name: DoorC
   m_TagString: Untagged
@@ -525,7 +674,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &359303603
@@ -543,6 +692,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1871611852}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &359303604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359303601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fada3fc5cdd85ea4ba45622bc40fe066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallRole: 0
 --- !u!1 &390893939
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,7 +771,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &390893941
@@ -637,6 +799,8 @@ GameObject:
   m_Component:
   - component: {fileID: 415706311}
   - component: {fileID: 415706312}
+  - component: {fileID: 415706314}
+  - component: {fileID: 415706313}
   m_Layer: 0
   m_Name: DroneB
   m_TagString: Untagged
@@ -708,9 +872,44 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &415706313
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415706310}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b1212f4fe538f5643a07f47792b84863, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &415706314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415706310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaad0744b47c13445985927657572c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  enemyAttack: {fileID: 0}
 --- !u!1 &450054922
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,6 +920,8 @@ GameObject:
   m_Component:
   - component: {fileID: 450054924}
   - component: {fileID: 450054923}
+  - component: {fileID: 450054926}
+  - component: {fileID: 450054925}
   m_Layer: 0
   m_Name: DustpanH
   m_TagString: Untagged
@@ -777,7 +978,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &450054924
@@ -795,6 +996,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 506094892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &450054925
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450054922}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5c90b093da69b0499ca767155b1252e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &450054926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450054922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9a36fbf9d94d14fbead56cb983ebcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  enemyAttack: {fileID: 0}
 --- !u!1 &506094891
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +1128,8 @@ GameObject:
   m_Component:
   - component: {fileID: 658186524}
   - component: {fileID: 658186523}
+  - component: {fileID: 658186526}
+  - component: {fileID: 658186525}
   m_Layer: 0
   m_Name: DustpanI
   m_TagString: Untagged
@@ -948,7 +1186,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &658186524
@@ -966,6 +1204,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 506094892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &658186525
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658186522}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5c90b093da69b0499ca767155b1252e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &658186526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658186522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9a36fbf9d94d14fbead56cb983ebcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  enemyAttack: {fileID: 0}
 --- !u!1 &716758369
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,6 +1249,8 @@ GameObject:
   m_Component:
   - component: {fileID: 716758371}
   - component: {fileID: 716758370}
+  - component: {fileID: 716758373}
+  - component: {fileID: 716758372}
   m_Layer: 0
   m_Name: DustpanC
   m_TagString: Untagged
@@ -1032,7 +1307,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &716758371
@@ -1050,6 +1325,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 506094892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &716758372
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716758369}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5c90b093da69b0499ca767155b1252e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &716758373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716758369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9a36fbf9d94d14fbead56cb983ebcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  enemyAttack: {fileID: 0}
 --- !u!1 &762979114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1426,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &762979116
@@ -1189,6 +1499,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1073075632}
   - component: {fileID: 1073075633}
+  - component: {fileID: 1073075635}
+  - component: {fileID: 1073075634}
   m_Layer: 0
   m_Name: Lever6
   m_TagString: Untagged
@@ -1260,9 +1572,48 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1073075634
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073075631}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 934dde65e764ea142b920555890e00bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1073075635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073075631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42aa5a9203c7f254a984ed4be979bc4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  leverCode: 0
+  remoteFloorLoc: 0
+  obx: 0
+  oby: 0
+  whatObj: {fileID: 0}
 --- !u!1 &1095086129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,7 +1680,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1095086131
@@ -1567,6 +1918,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1176811305}
   - component: {fileID: 1176811306}
+  - component: {fileID: 1176811308}
+  - component: {fileID: 1176811307}
   m_Layer: 0
   m_Name: DroneD
   m_TagString: Untagged
@@ -1638,9 +1991,44 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1176811307
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176811304}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b1212f4fe538f5643a07f47792b84863, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1176811308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176811304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaad0744b47c13445985927657572c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  enemyAttack: {fileID: 0}
 --- !u!1 &1252681779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,6 +2039,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1252681780}
   - component: {fileID: 1252681781}
+  - component: {fileID: 1252681783}
+  - component: {fileID: 1252681782}
   m_Layer: 0
   m_Name: Lever4
   m_TagString: Untagged
@@ -1722,9 +2112,48 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1252681782
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252681779}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 934dde65e764ea142b920555890e00bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1252681783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252681779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42aa5a9203c7f254a984ed4be979bc4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  leverCode: 0
+  remoteFloorLoc: 0
+  obx: 0
+  oby: 0
+  whatObj: {fileID: 0}
 --- !u!1 &1265681664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,6 +2164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1265681666}
   - component: {fileID: 1265681665}
+  - component: {fileID: 1265681667}
   m_Layer: 0
   m_Name: DoorA
   m_TagString: Untagged
@@ -1791,7 +2221,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1265681666
@@ -1809,6 +2239,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1871611852}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1265681667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265681664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fada3fc5cdd85ea4ba45622bc40fe066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallRole: 0
 --- !u!1 &1270169796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,6 +2262,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1270169798}
   - component: {fileID: 1270169797}
+  - component: {fileID: 1270169800}
+  - component: {fileID: 1270169799}
   m_Layer: 0
   m_Name: DustpanA
   m_TagString: Untagged
@@ -1875,7 +2320,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1270169798
@@ -1893,6 +2338,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 506094892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1270169799
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270169796}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5c90b093da69b0499ca767155b1252e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1270169800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270169796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9a36fbf9d94d14fbead56cb983ebcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  enemyAttack: {fileID: 0}
 --- !u!1 &1300935790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,6 +2383,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1300935791}
   - component: {fileID: 1300935792}
+  - component: {fileID: 1300935794}
+  - component: {fileID: 1300935793}
   m_Layer: 0
   m_Name: Lever2
   m_TagString: Untagged
@@ -1974,9 +2456,48 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1300935793
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300935790}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 934dde65e764ea142b920555890e00bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1300935794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300935790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42aa5a9203c7f254a984ed4be979bc4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  leverCode: 0
+  remoteFloorLoc: 0
+  obx: 0
+  oby: 0
+  whatObj: {fileID: 0}
 --- !u!1 &1332787755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +2508,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1332787757}
   - component: {fileID: 1332787756}
+  - component: {fileID: 1332787759}
+  - component: {fileID: 1332787758}
   m_Layer: 0
   m_Name: Goliath
   m_TagString: Untagged
@@ -2043,7 +2566,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1332787757
@@ -2061,6 +2584,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1332787758
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332787755}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2386cde33a3b4b740b20340e8d05c568, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1332787759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332787755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e93492ccf51494d8425ed0932fbc98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  golemLeg: {fileID: 0}
+  enemyAttack: {fileID: 0}
 --- !u!1 &1371455919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,6 +2629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1371455920}
+  - component: {fileID: 1371455921}
   m_Layer: 0
   m_Name: Drones
   m_TagString: Untagged
@@ -2096,6 +2656,20 @@ Transform:
   - {fileID: 1176811305}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1371455921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371455919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaad0744b47c13445985927657572c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  enemyAttack: {fileID: 0}
 --- !u!1 &1493960268
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +2680,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1493960270}
   - component: {fileID: 1493960269}
+  - component: {fileID: 1493960272}
+  - component: {fileID: 1493960271}
   m_Layer: 0
   m_Name: DustpanB
   m_TagString: Untagged
@@ -2162,7 +2738,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1493960270
@@ -2180,6 +2756,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 506094892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1493960271
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493960268}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5c90b093da69b0499ca767155b1252e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1493960272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493960268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9a36fbf9d94d14fbead56cb983ebcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  enemyAttack: {fileID: 0}
 --- !u!1 &1524174431
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,6 +2801,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1524174433}
   - component: {fileID: 1524174432}
+  - component: {fileID: 1524174434}
   m_Layer: 0
   m_Name: SaveB
   m_TagString: Untagged
@@ -2246,7 +2858,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1524174433
@@ -2264,6 +2876,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1524174434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524174431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc0d1934e35e3d40a238f73e2471259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1547913956
 GameObject:
   m_ObjectHideFlags: 0
@@ -2274,6 +2898,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1547913957}
   - component: {fileID: 1547913958}
+  - component: {fileID: 1547913960}
+  - component: {fileID: 1547913959}
   m_Layer: 0
   m_Name: Lever3
   m_TagString: Untagged
@@ -2345,9 +2971,48 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1547913959
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547913956}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 934dde65e764ea142b920555890e00bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1547913960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547913956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42aa5a9203c7f254a984ed4be979bc4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  leverCode: 0
+  remoteFloorLoc: 0
+  obx: 0
+  oby: 0
+  whatObj: {fileID: 0}
 --- !u!1 &1607902993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2358,6 +3023,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1607902994}
   - component: {fileID: 1607902995}
+  - component: {fileID: 1607902997}
+  - component: {fileID: 1607902996}
   m_Layer: 0
   m_Name: Lever1
   m_TagString: Untagged
@@ -2429,9 +3096,48 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1607902996
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607902993}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 934dde65e764ea142b920555890e00bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1607902997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607902993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42aa5a9203c7f254a984ed4be979bc4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  leverCode: 0
+  remoteFloorLoc: 0
+  obx: 0
+  oby: 0
+  whatObj: {fileID: 0}
 --- !u!1 &1679690133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2442,6 +3148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1679690135}
   - component: {fileID: 1679690134}
+  - component: {fileID: 1679690136}
   m_Layer: 0
   m_Name: DoorB
   m_TagString: Untagged
@@ -2498,7 +3205,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1679690135
@@ -2516,6 +3223,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1871611852}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679690136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679690133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fada3fc5cdd85ea4ba45622bc40fe066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallRole: 0
 --- !u!1 &1718522890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,6 +3246,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1718522891}
   - component: {fileID: 1718522892}
+  - component: {fileID: 1718522894}
+  - component: {fileID: 1718522893}
   m_Layer: 0
   m_Name: Lever5
   m_TagString: Untagged
@@ -2597,9 +3319,48 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1718522893
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718522890}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 934dde65e764ea142b920555890e00bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1718522894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718522890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42aa5a9203c7f254a984ed4be979bc4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  leverCode: 0
+  remoteFloorLoc: 0
+  obx: 0
+  oby: 0
+  whatObj: {fileID: 0}
 --- !u!1 &1792626914
 GameObject:
   m_ObjectHideFlags: 0
@@ -2610,6 +3371,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1792626916}
   - component: {fileID: 1792626915}
+  - component: {fileID: 1792626918}
+  - component: {fileID: 1792626917}
   m_Layer: 0
   m_Name: DustpanF
   m_TagString: Untagged
@@ -2666,7 +3429,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1792626916
@@ -2684,6 +3447,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 506094892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1792626917
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792626914}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5c90b093da69b0499ca767155b1252e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1792626918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792626914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9a36fbf9d94d14fbead56cb983ebcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  enemyAttack: {fileID: 0}
 --- !u!1 &1841075488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2694,6 +3492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1841075490}
   - component: {fileID: 1841075489}
+  - component: {fileID: 1841075491}
   m_Layer: 0
   m_Name: DoorD
   m_TagString: Untagged
@@ -2750,7 +3549,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1841075490
@@ -2768,6 +3567,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1871611852}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1841075491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841075488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fada3fc5cdd85ea4ba45622bc40fe066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallRole: 0
 --- !u!1 &1871611851
 GameObject:
   m_ObjectHideFlags: 0
@@ -3060,6 +3872,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1925447393}
   - component: {fileID: 1925447394}
+  - component: {fileID: 1925447396}
+  - component: {fileID: 1925447395}
   m_Layer: 0
   m_Name: DroneA
   m_TagString: Untagged
@@ -3131,9 +3945,44 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1925447395
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925447392}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b1212f4fe538f5643a07f47792b84863, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1925447396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925447392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaad0744b47c13445985927657572c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLoc: 0
+  enemyAttack: {fileID: 0}
 --- !u!1 &1961180278
 GameObject:
   m_ObjectHideFlags: 0
@@ -17242,6 +18091,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2026041397}
   - component: {fileID: 2026041396}
+  - component: {fileID: 2026041398}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -17298,7 +18148,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2026041397
@@ -17316,6 +18166,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2026041398
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026041395}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 766567534d5131142873462fcd3343d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2062781259
 GameObject:
   m_ObjectHideFlags: 0
@@ -17326,6 +18197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2062781261}
   - component: {fileID: 2062781260}
+  - component: {fileID: 2062781262}
   m_Layer: 0
   m_Name: SaveA
   m_TagString: Untagged
@@ -17382,7 +18254,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2062781261
@@ -17400,6 +18272,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2062781262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062781259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc0d1934e35e3d40a238f73e2471259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2111661142
 GameObject:
   m_ObjectHideFlags: 0
@@ -17466,7 +18350,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2111661144
