@@ -24,6 +24,7 @@ public class scrt_drone : MonoBehaviour, IEnemyCommon
     int direction = 0;
     float distance = 0f;
     bool alertOn = false;
+    bool wallCollide = false;
     Vector3 moveVector = Vector3.right;
 
     Transform player;
@@ -53,6 +54,8 @@ public class scrt_drone : MonoBehaviour, IEnemyCommon
         if (health <= 0) { state = 3; }
         delay--;
 
+        if(wallCollide) { direction = 0; }
+
         switch(state)
         {
             case 0: 
@@ -73,15 +76,16 @@ public class scrt_drone : MonoBehaviour, IEnemyCommon
             case 3: animator.SetBool("bool_death", true); break;
         }
 
+        wallCollide = false;
         
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "wall") //벽과 충돌
         {
-            if (state == 0) { direction *= -1; } //idle 상태일 경우 반대로 돌아감
-            else if (state == 1) { direction = 0; } //추격 중일 경우 벽에 걸려있음
+            transform.Translate(moveVector * direction * -1 * speed * Time.deltaTime, Space.World);
+            wallCollide = true;
         }
     }
 
