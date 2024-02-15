@@ -1887,7 +1887,7 @@ GameObject:
   - component: {fileID: 1119379458}
   m_Layer: 0
   m_Name: Plat_MovB
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4002,7 +4002,7 @@ GameObject:
   - component: {fileID: 1925371138}
   m_Layer: 0
   m_Name: Plat_MovA
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4433,7 +4433,7 @@ GameObject:
   - component: {fileID: 1961180280}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18834,7 +18834,7 @@ GameObject:
   - component: {fileID: 2143639566}
   m_Layer: 0
   m_Name: Plat_MovC
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
