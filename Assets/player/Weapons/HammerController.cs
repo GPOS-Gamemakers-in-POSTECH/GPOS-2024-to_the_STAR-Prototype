@@ -23,16 +23,11 @@ public class HammerController : MonoBehaviour
 
     void Start()
     {
-        // gameObject.tag = "weapon";
+        gameObject.tag = "playerWeapon";
 
         anim = GetComponent<Animator>();
         weaponCollider = GetComponent<CircleCollider2D>();
         weaponCollider.enabled = false;
-    }
-
-    // for physics
-    void FixedUpdate()
-    {
     }
 
     void Update()
