@@ -2901,7 +2901,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1371455920}
-  - component: {fileID: 1371455921}
   m_Layer: 0
   m_Name: Drones
   m_TagString: Untagged
@@ -2928,20 +2927,6 @@ Transform:
   - {fileID: 1176811305}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1371455921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1371455919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaad0744b47c13445985927657572c3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floorLoc: 0
-  enemyAttack: {fileID: 0}
 --- !u!1 &1493960268
 GameObject:
   m_ObjectHideFlags: 0
@@ -18547,7 +18532,7 @@ GameObject:
   - component: {fileID: 2026041399}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
