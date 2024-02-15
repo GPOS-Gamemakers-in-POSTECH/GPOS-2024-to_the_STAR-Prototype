@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3133c63c5d491744b8fdd08fd931f0d9
+guid: 8b496299352732e4aaf265677226abe5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: drone_red_fire_0
+      name: drone_gun_0
       rect:
         serializedVersion: 2
         x: 2
-        y: 13
-        width: 28
-        height: 12
+        y: 7
+        width: 26
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d22a72967b8f9b4ab3a22dcb241de18
-      internalID: 1819553184
+      spriteID: 29e2028fbe6a0fb46a759a3334a77deb
+      internalID: 443888748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: drone_red_fire_1
+      name: drone_gun_1
       rect:
         serializedVersion: 2
         x: 35
-        y: 13
-        width: 28
-        height: 12
+        y: 7
+        width: 26
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de977c72a61069a4b9af8d1f94d00044
-      internalID: 1049955749
+      spriteID: a0fbf977eb0322b44b28651ec6fca39f
+      internalID: 421146932
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      drone_red_fire_0: 1819553184
-      drone_red_fire_1: 1049955749
+      drone_gun_0: 443888748
+      drone_gun_1: 421146932
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

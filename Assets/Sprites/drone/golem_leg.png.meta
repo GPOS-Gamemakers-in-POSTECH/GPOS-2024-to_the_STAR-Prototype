@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3133c63c5d491744b8fdd08fd931f0d9
+guid: a9afc944dc7b9304b8470f6e1f8b8e57
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: drone_red_fire_0
+      name: golem_leg_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 13
-        width: 28
-        height: 12
+        x: 12
+        y: 19
+        width: 15
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d22a72967b8f9b4ab3a22dcb241de18
-      internalID: 1819553184
+      spriteID: f8a8d9f6b520c4e4b9ad97acc67c65ee
+      internalID: 2085116715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: drone_red_fire_1
+      name: golem_leg_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 13
-        width: 28
-        height: 12
+        x: 37
+        y: 19
+        width: 15
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de977c72a61069a4b9af8d1f94d00044
-      internalID: 1049955749
+      spriteID: 64d4de7381301a449a1a6179423012b9
+      internalID: -1100868753
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      drone_red_fire_0: 1819553184
-      drone_red_fire_1: 1049955749
+      golem_leg_0: 2085116715
+      golem_leg_1: -1100868753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

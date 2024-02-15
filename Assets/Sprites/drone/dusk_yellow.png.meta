@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3133c63c5d491744b8fdd08fd931f0d9
+guid: a5b05bf5dac03ea449ccf6699b7f1f76
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: drone_red_fire_0
+      name: dusk_yellow_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 13
-        width: 28
-        height: 12
+        x: 11
+        y: 0
+        width: 21
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d22a72967b8f9b4ab3a22dcb241de18
-      internalID: 1819553184
+      spriteID: d0b3993c3f77dc04fb5a62a3deac6e48
+      internalID: 2134325668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: drone_red_fire_1
+      name: dusk_yellow_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 13
-        width: 28
-        height: 12
+        x: 43
+        y: 0
+        width: 21
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de977c72a61069a4b9af8d1f94d00044
-      internalID: 1049955749
+      spriteID: 35322e57c6960524e9178a7b2e344b87
+      internalID: 1201093231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dusk_yellow_2
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce9788ef6dc8e24fbe88c6696f53c9d
+      internalID: -1871542534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dusk_yellow_3
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 0
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3754fbdedc5a854697306f1a9c1235a
+      internalID: 361581112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dusk_yellow_4
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 0
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65eececd6ada084aabcab0dd029ec2d
+      internalID: 331804188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dusk_yellow_5
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 0
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd1c8b3125b491489be497b6a6a1f3c
+      internalID: -696739881
       vertices: []
       indices: 
       edges: []
@@ -162,8 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      drone_red_fire_0: 1819553184
-      drone_red_fire_1: 1049955749
+      dusk_yellow_0: 2134325668
+      dusk_yellow_1: 1201093231
+      dusk_yellow_2: -1871542534
+      dusk_yellow_3: 361581112
+      dusk_yellow_4: 331804188
+      dusk_yellow_5: -696739881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

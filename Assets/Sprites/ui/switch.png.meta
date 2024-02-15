@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3133c63c5d491744b8fdd08fd931f0d9
+guid: 5a3b770a27d6e274fbd666c5e7b3d8d7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: drone_red_fire_0
+      name: switch_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 13
-        width: 28
-        height: 12
+        x: 3
+        y: 17
+        width: 5
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d22a72967b8f9b4ab3a22dcb241de18
-      internalID: 1819553184
+      spriteID: 97f9083097eadca43a92a9628bfb5a9d
+      internalID: 1670608507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: drone_red_fire_1
+      name: switch_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 13
-        width: 28
-        height: 12
+        x: 3
+        y: 3
+        width: 5
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de977c72a61069a4b9af8d1f94d00044
-      internalID: 1049955749
+      spriteID: 6e819571b5769704b9268b3f7e6fb411
+      internalID: 922512005
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      drone_red_fire_0: 1819553184
-      drone_red_fire_1: 1049955749
+      switch_0: 1670608507
+      switch_1: 922512005
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

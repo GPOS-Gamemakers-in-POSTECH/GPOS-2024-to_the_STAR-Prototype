@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3133c63c5d491744b8fdd08fd931f0d9
+guid: 1d2556751aef9dd4492be43ce475ea75
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: drone_red_fire_0
+      name: TalkMedia_i_27bca7304aa0.png_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 13
-        width: 28
-        height: 12
+        x: 1
+        y: 1
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d22a72967b8f9b4ab3a22dcb241de18
-      internalID: 1819553184
+      spriteID: f4a221b7249f4154eaf64c0642d2d7ef
+      internalID: -1325463005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: drone_red_fire_1
+      name: TalkMedia_i_27bca7304aa0.png_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 13
-        width: 28
-        height: 12
+        x: 34
+        y: 1
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de977c72a61069a4b9af8d1f94d00044
-      internalID: 1049955749
+      spriteID: 6350d97d5f3f96545ba98688f9b7bb96
+      internalID: 1163579181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TalkMedia_i_27bca7304aa0.png_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b917138121499164faa714989ee525d3
+      internalID: -16482329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TalkMedia_i_27bca7304aa0.png_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7b0d41cfd7c114eb3d1fdfac6e63e6
+      internalID: 737449853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TalkMedia_i_27bca7304aa0.png_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c93ed33afb69f4fbf7764e04e83679
+      internalID: 367572285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TalkMedia_i_27bca7304aa0.png_5
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aca8a1b5b011c847bde986a77e01e82
+      internalID: 519834853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TalkMedia_i_27bca7304aa0.png_6
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d03fad97626d742aeb6a00015ef47b
+      internalID: 334116227
       vertices: []
       indices: 
       edges: []
@@ -162,8 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      drone_red_fire_0: 1819553184
-      drone_red_fire_1: 1049955749
+      TalkMedia_i_27bca7304aa0.png_0: -1325463005
+      TalkMedia_i_27bca7304aa0.png_1: 1163579181
+      TalkMedia_i_27bca7304aa0.png_2: -16482329
+      TalkMedia_i_27bca7304aa0.png_3: 737449853
+      TalkMedia_i_27bca7304aa0.png_4: 367572285
+      TalkMedia_i_27bca7304aa0.png_5: 519834853
+      TalkMedia_i_27bca7304aa0.png_6: 334116227
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
