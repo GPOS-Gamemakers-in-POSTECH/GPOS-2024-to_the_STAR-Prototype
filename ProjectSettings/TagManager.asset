@@ -9,11 +9,12 @@ TagManager:
   - wall
   - playerWeapon
   - enemyWeapon
+  - object
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 

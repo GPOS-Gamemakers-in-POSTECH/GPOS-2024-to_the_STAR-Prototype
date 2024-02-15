@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class scrt_dustpan : MonoBehaviour
+public class scrt_dustpan : MonoBehaviour, IEnemyCommon
 {
     //능력치
     float attack = 20f; //공격력
@@ -155,4 +155,11 @@ public class scrt_dustpan : MonoBehaviour
         delay = time;
         animator.SetTrigger("trigger_getStunned");
     }
+}
+
+
+public interface IEnemyCommon
+{
+    void Damage(float damage);
+    void GetStunned(int time);
 }
