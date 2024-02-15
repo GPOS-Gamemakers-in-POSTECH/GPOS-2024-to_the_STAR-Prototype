@@ -21,7 +21,7 @@ public class PlayerMovementControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        applyGravity(PlayerState.gravitentialForce);
+        ApplyGravity(PlayerState.gravitentialForce);
 
         return;
     }
@@ -42,7 +42,7 @@ public class PlayerMovementControl : MonoBehaviour
         return;
     }
 
-    void applyGravity(float gravitentialForce)
+    void ApplyGravity(float gravitentialForce)
     {
         rb.AddForce(PlayerState.gravityVector * gravitentialForce);
 

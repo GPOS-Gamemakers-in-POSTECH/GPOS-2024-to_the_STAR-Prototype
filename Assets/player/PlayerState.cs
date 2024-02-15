@@ -13,6 +13,7 @@ public class PlayerState : MonoBehaviour
     public static Vector2 playerCoordinateVector;
     public static Vector2 gravitySourceVector;
     public static float gravitentialForce;
+
     void Awake()
     {
         playerHealth = 100;
@@ -21,18 +22,23 @@ public class PlayerState : MonoBehaviour
         playerStunEffectDefense = 1;
         playerChaosEffectDefense = 10;
         gravityVector = Vector2.down;
-        gravitentialForce = 10.0;
+        gravitentialForce = 10.0f;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void FixedUpdate()
+    {
+        playerCoordinateVector = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
+
+        return;
     }
 }

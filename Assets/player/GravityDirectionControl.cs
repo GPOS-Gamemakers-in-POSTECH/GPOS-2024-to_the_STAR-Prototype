@@ -16,4 +16,11 @@ public class GravityDirectionControl : MonoBehaviour
 
     }
 
+    public void UpdateGravity()
+    {
+        if (PlayerState.gravitySourceVector == null) return;
+
+        PlayerState.gravityVector = (PlayerState.gravitySourceVector - PlayerState.playerCoordinateVector).normalized;
+
+    }
 }
