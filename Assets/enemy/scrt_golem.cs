@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class scrt_golem : MonoBehaviour
+public class scrt_golem : MonoBehaviour, IEnemyCommon
 {
     float attack = 20f; //공격력
     float health = 100f; //체력

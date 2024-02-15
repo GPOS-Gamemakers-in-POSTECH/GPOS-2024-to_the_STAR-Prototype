@@ -12,12 +12,14 @@ public class scrt_lever : MonoBehaviour
     public GameObject whatObj; //뭘 없애고 만들지 지정
 
     SpriteRenderer spriteRenderer;
+    Animator animator;
 
     GameObject relatedObj;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         gameObject.tag = "object";
 
         if (floorLoc != 0) { spriteRenderer.transform.localRotation = Quaternion.Euler(0f, 0f, (4 - floorLoc) * 90f); }
@@ -25,6 +27,7 @@ public class scrt_lever : MonoBehaviour
         if(leverCode == 0)
         {
             relatedObj = Instantiate(whatObj, new Vector3(obx, oby, 0f), Quaternion.Euler(0f, 0f, (4 - remoteFloorLoc) * 90f));
+            animator.SetBool("bool_On", false);
         }
     }
 
@@ -39,11 +42,13 @@ public class scrt_lever : MonoBehaviour
         {
             Destroy(relatedObj);
             leverCode = 1;
+            animator.SetBool("bool_On", false);
         }
         else //생성
         {
             relatedObj = Instantiate(whatObj, new Vector3(obx, oby, 0f), Quaternion.Euler(0f, 0f, (4 - remoteFloorLoc) * 90f));
             leverCode = 0;
+            animator.SetBool("bool_On", true);
         }
     }
 }

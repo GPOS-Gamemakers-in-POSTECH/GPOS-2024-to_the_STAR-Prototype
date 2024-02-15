@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class scrt_drone : MonoBehaviour
+public class scrt_drone : MonoBehaviour, IEnemyCommon
 {
     //능력치
     float attack = 20f; //공격력
