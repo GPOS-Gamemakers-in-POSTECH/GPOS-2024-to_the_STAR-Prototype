@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aa6a7690f546e7041b5ae1d5c8af850a
+guid: 4913dc8c673957b469ab733db8222281
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,19 +81,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,10 +113,10 @@ TextureImporter:
       name: drone_green_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 2
+        y: 14
+        width: 28
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac748225a9c98f740a59f58b8fc8bac9
-      internalID: 988414848
+      spriteID: b77fb25b29fff73489ddee3f54414630
+      internalID: -636495912
       vertices: []
       indices: 
       edges: []
@@ -147,10 +134,10 @@ TextureImporter:
       name: drone_green_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 34
+        y: 13
+        width: 28
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86d5f5202ba57614998807b9648b6247
-      internalID: 1230334441
+      spriteID: a3b3a375c159fa3449c76ea222148632
+      internalID: -848398664
       vertices: []
       indices: 
       edges: []
@@ -175,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      drone_green_0: 988414848
-      drone_green_1: 1230334441
+      drone_green_0: -636495912
+      drone_green_1: -848398664
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
