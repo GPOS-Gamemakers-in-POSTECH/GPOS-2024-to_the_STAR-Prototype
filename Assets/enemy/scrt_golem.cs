@@ -33,6 +33,7 @@ public class scrt_golem : MonoBehaviour, IEnemyCommon
     bool attackOn = false;
     bool attackLeg = false; //false: left  true: right
     bool flipXbool = false;
+    bool wallCollide = false;
     Vector3 moveVector = Vector3.right;
 
     Transform player;
@@ -79,6 +80,8 @@ public class scrt_golem : MonoBehaviour, IEnemyCommon
         if (health <= 0) { state = 3; }
         delay--;
 
+        if (wallCollide) { direction = 0; }
+
         switch (state)
         {
             case 0: Move(); break;
@@ -90,6 +93,17 @@ public class scrt_golem : MonoBehaviour, IEnemyCommon
                 }
                 break;
             case 3: animator.SetBool("bool_death", true); break;
+        }
+
+        wallCollide = false;
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "wall") //벽과 충돌
+        {
+            this.transform.position += rotateVector(-1 * direction * speed * Time.deltaTime / 2, 0);
+            wallCollide = true;
         }
     }
 
@@ -161,7 +175,7 @@ public class scrt_golem : MonoBehaviour, IEnemyCommon
                 case 0:
                     if (direction == -1) { leftLeg.transform.position += moveVec1; }
                     else if (direction == 1) { rightLeg.transform.position += moveVec2; }
-                    this.transform.position += rotateVector(direction * speed / 2, 0);
+                    this.transform.position += rotateVector(direction * speed * Time.deltaTime / 2, 0);
                     if (walkingLegNum>=walkLength/speed) { walkDelay = (int)(walkLength / speed); walkingLegNum = 0; walkingState = 1; }
                     walkingLegNum++;
                     break;
@@ -172,7 +186,7 @@ public class scrt_golem : MonoBehaviour, IEnemyCommon
                 case 2:
                     if (direction == -1) { rightLeg.transform.position += moveVec1; }
                     else if (direction == 1) { leftLeg.transform.position += moveVec2; }
-                    this.transform.position += rotateVector(direction * speed / 2, 0);
+                    this.transform.position += rotateVector(direction * speed * Time.deltaTime / 2, 0);
                     if (walkingLegNum > walkLength / speed) { walkingLegNum = 0; walkingState = 3; }
                     walkingLegNum++;
                     break;

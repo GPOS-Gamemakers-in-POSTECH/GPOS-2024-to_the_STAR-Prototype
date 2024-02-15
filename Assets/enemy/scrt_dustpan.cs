@@ -23,6 +23,7 @@ public class scrt_dustpan : MonoBehaviour, IEnemyCommon
     int direction = 0;
     float distance = 0f;
     bool alertOn = false;
+    bool wallCollide = false;
     Vector3 moveVector = Vector3.right;
 
     Transform player;
@@ -51,7 +52,9 @@ public class scrt_dustpan : MonoBehaviour, IEnemyCommon
         if (health <= 0) { state = 3; }
         delay--;
 
-        switch(state)
+        if (wallCollide) { direction = 0; }
+
+        switch (state)
         {
             case 0: 
                 Move();
@@ -71,16 +74,8 @@ public class scrt_dustpan : MonoBehaviour, IEnemyCommon
             case 3: animator.SetBool("bool_death", true); break;
         }
 
+        wallCollide = false;
         
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "wall") //벽과 충돌
-        {
-            if (state == 0) { direction *= -1; } //idle 상태일 경우 반대로 돌아감
-            else if (state == 1) { direction = 0; } //추격 중일 경우 벽에 걸려있음
-        }
     }
 
     void Move()
@@ -141,6 +136,15 @@ public class scrt_dustpan : MonoBehaviour, IEnemyCommon
             animator.SetTrigger("trigger_attack");
         }
 
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "wall") //벽과 충돌
+        {
+            transform.Translate(moveVector * direction * -1 * speed * Time.deltaTime, Space.World);
+            wallCollide = true;
+        }
     }
 
     public void Damage(float damage) //플레이어 오브젝트에서 이 함수를 통해 데미지를 입힐 수 있음. enemy tag를 찾아서 공격과 충돌판정이 나는 경우 호출하면 됨
