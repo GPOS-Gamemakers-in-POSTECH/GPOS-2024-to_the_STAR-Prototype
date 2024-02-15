@@ -16,7 +16,7 @@ public class InteractControl : MonoBehaviour
         
     }
 
-    public void interact()
+    public void Interact()
     {
 
     }
