@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class GravityDirectionControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 
     }
 
-    public void UpdateGravity()
+    void FixedUpdate()
+    {
+        UpdateGravityVector();    
+    }
+
+    public void UpdateGravityVector()
     {
         if (PlayerState.gravitySourceVector == null) return;
 
