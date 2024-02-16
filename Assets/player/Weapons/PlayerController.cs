@@ -34,13 +34,13 @@ public class PlayerControl : MonoBehaviour
 
         if (moveDirection > 0)
         {
-            sr.flipX = false;
+            sr.flipX = true;
             hammer.transform.localPosition = new Vector3(0.5f, 0, 0);
             hammer.transform.localScale = new Vector3(1, 1, 1);
         }
         else if (moveDirection < 0)
         {
-            sr.flipX = true;
+            sr.flipX = false;
             hammer.transform.localPosition = new Vector3(-0.5f, 0, 0);
             hammer.transform.localScale = new Vector3(-1, 1, 1);
         }
