@@ -20,6 +20,11 @@ public class PlayerControl : MonoBehaviour
     private GameObject flamethrower;
     private GameObject tongs;
 
+    //weapon on/off
+    public bool hammerOn = false;
+    public bool tongsOn = false;
+    public bool flamethrowerOn = false;
+
     void Start()
     {
         gameObject.tag = "player";
@@ -55,25 +60,26 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         // select weapon
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && hammerOn)
         {
             hammer.SetActive(true);
             flamethrower.SetActive(false);
             tongs.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && flamethrowerOn)
         {
             hammer.SetActive(false);
             flamethrower.SetActive(true);
             tongs.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) && tongsOn)
         {
             hammer.SetActive(false);
             flamethrower.SetActive(false);
             tongs.SetActive(true);
         }
+
     }
 }
