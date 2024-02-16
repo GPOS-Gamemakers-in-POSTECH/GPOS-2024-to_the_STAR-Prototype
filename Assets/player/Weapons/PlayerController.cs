@@ -17,6 +17,8 @@ public class PlayerControl : MonoBehaviour
 
     // weapons
     private GameObject hammer;
+    private GameObject flamethrower;
+    private GameObject tongs;
 
     void Start()
     {
@@ -24,7 +26,11 @@ public class PlayerControl : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+
+        // weapons
         hammer = transform.GetChild(0).gameObject;
+        flamethrower = transform.GetChild(1).gameObject;
+        tongs = transform.GetChild(2).gameObject;
     }
 
     void FixedUpdate()
@@ -48,6 +54,26 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
+        // select weapon
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            hammer.SetActive(true);
+            flamethrower.SetActive(false);
+            tongs.SetActive(false);
+        }
 
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            hammer.SetActive(false);
+            flamethrower.SetActive(true);
+            tongs.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            hammer.SetActive(false);
+            flamethrower.SetActive(false);
+            tongs.SetActive(true);
+        }
     }
 }

@@ -21,17 +21,18 @@ public class FlamethrowerController : MonoBehaviour
     // coroutine
     Coroutine coroutineController = null;
 
-    // Start is called before the first frame update
     void Start()
     {
-        fire = GetComponent<ParticleSystem>();
+        gameObject.tag = "playerWeapon";
 
+        // particle system for flame
+        fire = GetComponent<ParticleSystem>();
         fire.Stop();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // press the mouse button
         if (Input.GetMouseButtonDown(0))
         {
             watch.Reset();
@@ -42,6 +43,7 @@ public class FlamethrowerController : MonoBehaviour
             }
         }
 
+        // release the mouse button
         if (Input.GetMouseButtonUp(0))
         {
             if (coroutineController != null)
@@ -55,7 +57,7 @@ public class FlamethrowerController : MonoBehaviour
             coroutineController = null;
         }
 
-        // rotate flaemthrower
+        // rotate flamethrower
         target = transform.parent.position;
         mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         angle = Mathf.Atan2(mouse.y - target.y, mouse.x - target.x) * Mathf.Rad2Deg;
@@ -68,6 +70,15 @@ public class FlamethrowerController : MonoBehaviour
         {
             Debug.Log("Hit enemy with flamethrower!");
         }
+    }
+
+    // reset all coroutine and state
+    void OnDisable()
+    {
+        // stop all coroutine
+        StopAllCoroutines();
+        isFire = false;
+        isSleep = false;
     }
 
     IEnumerator Attack()
