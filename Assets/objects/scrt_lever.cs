@@ -29,6 +29,10 @@ public class scrt_lever : MonoBehaviour
             relatedObj = Instantiate(whatObj, new Vector3(obx, oby, 0f), Quaternion.Euler(0f, 0f, (4 - remoteFloorLoc) * 90f));
             animator.SetBool("bool_On", false);
         }
+        else
+        {
+            animator.SetBool("bool_On", true);
+        }
     }
 
     void Update()
