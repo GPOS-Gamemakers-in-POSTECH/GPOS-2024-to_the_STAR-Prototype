@@ -14,7 +14,8 @@ public class scrt_lever : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator animator;
 
-    GameObject relatedObj;
+    float orix;
+    float oriy;
 
     void Start()
     {
@@ -23,10 +24,13 @@ public class scrt_lever : MonoBehaviour
         gameObject.tag = "object";
 
         if (floorLoc != 0) { spriteRenderer.transform.localRotation = Quaternion.Euler(0f, 0f, (4 - floorLoc) * 90f); }
+        orix = whatObj.transform.position.x;
+        oriy = whatObj.transform.position.y;
 
         if(leverCode == 0)
         {
-            relatedObj = Instantiate(whatObj, new Vector3(obx, oby, 0f), Quaternion.Euler(0f, 0f, (4 - remoteFloorLoc) * 90f));
+            whatObj.transform.rotation = Quaternion.Euler(0f, 0f, (4 - remoteFloorLoc) * 90f);
+            whatObj.transform.position = new Vector3(obx, oby, 0);
             animator.SetBool("bool_On", false);
         }
         else
@@ -44,13 +48,13 @@ public class scrt_lever : MonoBehaviour
     {
         if (leverCode == 0) //제거
         {
-            Destroy(relatedObj);
+            whatObj.transform.position = new Vector3(orix, oriy, 0);
             leverCode = 1;
             animator.SetBool("bool_On", false);
         }
         else //생성
         {
-            relatedObj = Instantiate(whatObj, new Vector3(obx, oby, 0f), Quaternion.Euler(0f, 0f, (4 - remoteFloorLoc) * 90f));
+            whatObj.transform.position = new Vector3(obx, oby, 0);
             leverCode = 0;
             animator.SetBool("bool_On", true);
         }

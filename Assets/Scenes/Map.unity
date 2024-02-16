@@ -448,11 +448,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorLoc: 1
-  leverCode: 0
+  leverCode: 1
   remoteFloorLoc: 0
-  obx: 2
-  oby: 0
-  whatObj: {fileID: 0}
+  obx: 0
+  oby: -5
+  whatObj: {fileID: 1888095119}
 --- !u!212 &134534292
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2828,6 +2828,7 @@ GameObject:
   - component: {fileID: 1119379457}
   - component: {fileID: 1119379459}
   - component: {fileID: 1119379458}
+  - component: {fileID: 1119379460}
   m_Layer: 0
   m_Name: Plat_MovC
   m_TagString: wall
@@ -2844,7 +2845,7 @@ Transform:
   m_GameObject: {fileID: 1119379456}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3027,6 +3028,42 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1119379460
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119379456}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1 &1176811304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3933,11 +3970,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorLoc: 1
-  leverCode: 1
+  leverCode: 0
   remoteFloorLoc: 0
   obx: 2
   oby: 0
-  whatObj: {fileID: 0}
+  whatObj: {fileID: 1925371136}
 --- !u!61 &1300935795
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4709,7 +4746,7 @@ MonoBehaviour:
   remoteFloorLoc: 0
   obx: 0
   oby: 0
-  whatObj: {fileID: 0}
+  whatObj: {fileID: 1119379456}
 --- !u!61 &1547913961
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5266,9 +5303,9 @@ MonoBehaviour:
   floorLoc: 0
   leverCode: 1
   remoteFloorLoc: 0
-  obx: 0
+  obx: 8
   oby: 0
-  whatObj: {fileID: 0}
+  whatObj: {fileID: 2143639564}
 --- !u!61 &1718522895
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5763,9 +5800,10 @@ GameObject:
   - component: {fileID: 1888095120}
   - component: {fileID: 1888095122}
   - component: {fileID: 1888095121}
+  - component: {fileID: 1888095123}
   m_Layer: 0
   m_Name: Plat_MovA
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5954,6 +5992,42 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1888095123
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888095119}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1 &1909700605
 GameObject:
   m_ObjectHideFlags: 0
@@ -6004,6 +6078,7 @@ GameObject:
   - component: {fileID: 1925371137}
   - component: {fileID: 1925371139}
   - component: {fileID: 1925371138}
+  - component: {fileID: 1925371140}
   m_Layer: 0
   m_Name: Plat_MovB
   m_TagString: wall
@@ -6020,7 +6095,7 @@ Transform:
   m_GameObject: {fileID: 1925371136}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 7, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6203,6 +6278,42 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1925371140
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925371136}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1 &1925447392
 GameObject:
   m_ObjectHideFlags: 0
@@ -21396,6 +21507,7 @@ GameObject:
   - component: {fileID: 2143639565}
   - component: {fileID: 2143639567}
   - component: {fileID: 2143639566}
+  - component: {fileID: 2143639568}
   m_Layer: 0
   m_Name: Plat_MovD
   m_TagString: wall
@@ -21625,6 +21737,42 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &2143639568
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143639564}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
