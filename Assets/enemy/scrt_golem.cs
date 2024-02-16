@@ -7,17 +7,17 @@ public class scrt_golem : MonoBehaviour, IEnemyCommon
 {
     float attack = 20f; //공격력
     float health = 100f; //체력
-    float speed = 0.1f; //골렘 한쪽 다리의 이동 속도
-    float walkLength = 3f; //골렘 한쪽 다리가 최대한 이동할 거리
-    float golemLegX = 4.5f; //다리가 달릴 지점의 좌표, 골렘 중간 코어부의 중심을 기준으로 우측다리의 좌표
-    float golemLegY = -2f;
-    float attackX = 4.5f; //공격 오브젝트를 만들 좌표, 기준점은 golemLeg과 동일
-    float attackY = -3f;
+    float speed = 0.025f; //골렘 한쪽 다리의 이동 속도
+    float walkLength = 1f; //골렘 한쪽 다리가 최대한 이동할 거리
+    float golemLegX = 1.05f; //다리가 달릴 지점의 좌표, 골렘 중간 코어부의 중심을 기준으로 우측다리의 좌표
+    float golemLegY = -1.25f;
+    float attackX = 1.05f; //공격 오브젝트를 만들 좌표, 기준점은 golemLeg과 동일
+    float attackY = -1.25f;
     float detectionRangeX = 40f; //가로탐지범위
     float detectionRangeY = 15f; //세로탐지범위
     float attackRange = 10f; //공격범위
-    float attackAngle = 60f; //공격시 다리를 들 최대 각도
-    float attackLegSpeed = 0.3f; //공격시 다리를 들 속도
+    float attackAngle = 0.5f; //공격시 다리를 들 최대 높이
+    float attackLegSpeed = 0.005f; //공격시 다리를 들 속도
     int attackDelay = 60; //공격후 이동 딜레이
     int attackTime = 20; //공격지속시간
     public int floorLoc = 0; //딛고 있는 바닥의 위치, 0: 바닥, 1: 왼쪽벽 2: 천장 3: 오른쪽벽
@@ -238,17 +238,17 @@ public class scrt_golem : MonoBehaviour, IEnemyCommon
 
             if (!attackLeg) //왼쪽에 있을 때 공격
             {
-                leftLeg.transform.Rotate(0f, 0f, -1 * attackLegSpeed);
+                leftLeg.transform.position += rotateVector(0f, attackLegSpeed);
             }
             else //오른쪽에 있을 때 공격
             {
-                rightLeg.transform.Rotate(0f, 0f, attackLegSpeed);
+                rightLeg.transform.position += rotateVector(0f, attackLegSpeed);
             }
 
             if(Math.Abs(attackLegSpeed * delay) >= attackAngle) //다리를 순식간에 내려놓으며 공격오브젝트 생성
             {
-                if (!attackLeg) { leftLeg.transform.Rotate(0f, 0f, -1 * attackLegSpeed * delay); }
-                else { rightLeg.transform.Rotate(0f, 0f, attackLegSpeed * delay); }
+                if (!attackLeg) { leftLeg.transform.position += rotateVector(0f, attackLegSpeed * delay); }
+                else { rightLeg.transform.position += rotateVector(0f, attackLegSpeed * delay); }
                 if (floorLoc % 2 == 0)
                 {
                     attackObj = Instantiate(enemyAttack, transform.position + rotateVector((floorLoc-1)*Math.Sign(-1 * player.transform.position.x + this.transform.position.x) * attackX, attackY), rotateAngle);
