@@ -23,7 +23,7 @@ public class GravityDirectionControl : MonoBehaviour
 
     public void UpdateGravityVector()
     {
-        if (PlayerState.gravitySourceVector.x == 0 && PlayerState.gravitySourceVector.y == 0 && ) return;
+        if (PlayerState.gravitySourceVector.x == 0 && PlayerState.gravitySourceVector.y == 0) return;
 
         PlayerState.gravityVector = (PlayerState.gravitySourceVector - PlayerState.playerCoordinateVector).normalized;
 
