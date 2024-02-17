@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GravityDirectionControl : MonoBehaviour
 {
-
+    
     void Start()
     {
         
@@ -25,7 +25,9 @@ public class GravityDirectionControl : MonoBehaviour
     {
         if (PlayerState.gravitySourceVector.x == 0 && PlayerState.gravitySourceVector.y == 0) return;
 
-        PlayerState.gravityVector = (PlayerState.gravitySourceVector - PlayerState.playerCoordinateVector).normalized;
+
+
+        PlayerState.gravityVector = PlayerState.gravitySourceDirection * (PlayerState.gravitySourceVector - PlayerState.playerCoordinateVector).normalized;
 
     }
 }

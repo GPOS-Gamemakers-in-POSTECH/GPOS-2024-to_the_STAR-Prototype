@@ -13,7 +13,7 @@ public class PlayerState : MonoBehaviour
     public static Vector2 playerCoordinateVector;
     public static Vector2 gravitySourceVector;
     public static float gravitentialForce;
-
+    public static int gravitySourceDirection = 1;
     void Awake()
     {
         playerHealth = 100;
