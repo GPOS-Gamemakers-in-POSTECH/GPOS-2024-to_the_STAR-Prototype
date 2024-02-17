@@ -48,9 +48,9 @@ public class GravityArea : MonoBehaviour
         // Add all areas and map ids of area.
         string upper_key = string.Format("{0} {1} {2} {3}",
             Mathf.Floor(PlayerState.playerCoordinateVector.x),
-            Mathf.Floor(PlayerState.playerCoordinateVector.y + 0.2f),
+            Mathf.Floor(PlayerState.playerCoordinateVector.y - 0.3f),
             Mathf.Ceil(PlayerState.playerCoordinateVector.x),
-            Mathf.Ceil(PlayerState.playerCoordinateVector.y + 0.2f));
+            Mathf.Ceil(PlayerState.playerCoordinateVector.y - 0.3f));
 
         if (dictOfGravitySource.ContainsKey(upper_key))
         {
