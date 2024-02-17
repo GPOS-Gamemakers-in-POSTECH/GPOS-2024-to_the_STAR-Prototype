@@ -24,10 +24,10 @@ public class GravityArea : MonoBehaviour
         dictOfGravitySource.Add("-20 -11 -19 -10", (new Vector2(-20, -11), new Vector2(-19, -10), new Vector2(-20, -11), 1));
         dictOfGravitySource.Add("-11 -10 -10 -9", (new Vector2(-11, -10), new Vector2(-10, -9), new Vector2(-11, -9), -1));
         dictOfGravitySource.Add("-10 -5 -9 -4", (new Vector2(-10, -5), new Vector2(-9, -4), new Vector2(-9, -5), 1));
-        dictOfGravitySource.Add("-3 -2 -2 -1", (new Vector2(-3, -2), new Vector2(-2, -1), new Vector2(-3, -1), -1));
+        dictOfGravitySource.Add("-3 -2 -2 -1", (new Vector2(-3, -2), new Vector2(-2, -1), new Vector2(-3, -1), 1));
         dictOfGravitySource.Add("-4 -4 -3 -3", (new Vector2(-4, -4), new Vector2(-3, -3), new Vector2(-4, -3), -1));
         dictOfGravitySource.Add("3 -2 4 -1", (new Vector2(3, -2), new Vector2(4, -1), new Vector2(3, -2), 1));
-        dictOfGravitySource.Add("4 -4 5 -3", (new Vector2(4, -4), new Vector2(-5, -3), new Vector2(5, -3), -1));
+        dictOfGravitySource.Add("4 -4 5 -3", (new Vector2(4, -4), new Vector2(5, -3), new Vector2(5, -3), -1));
         dictOfGravitySource.Add("17 -5 18 -4", (new Vector2(17, -5), new Vector2(18, -4), new Vector2(17, -5), 1));
         dictOfGravitySource.Add("17 -11 18 -10", (new Vector2(17, -11), new Vector2(18, -10), new Vector2(17, -10), 1));
         dictOfGravitySource.Add("8 -11 9 -10", (new Vector2(8, -11), new Vector2(9, -10), new Vector2(9, -10), 1));
@@ -69,9 +69,9 @@ public class GravityArea : MonoBehaviour
         // Add all areas and map ids of area.
         string lower_key = string.Format("{0} {1} {2} {3}",
             Mathf.Floor(PlayerState.playerCoordinateVector.x),
-            Mathf.Floor(PlayerState.playerCoordinateVector.y - 0.2f),
+            Mathf.Floor(PlayerState.playerCoordinateVector.y - 0.7f),
             Mathf.Ceil(PlayerState.playerCoordinateVector.x),
-            Mathf.Ceil(PlayerState.playerCoordinateVector.y - 0.2f));
+            Mathf.Ceil(PlayerState.playerCoordinateVector.y - 0.7f));
 
         if (dictOfGravitySource.ContainsKey(lower_key))
         {
