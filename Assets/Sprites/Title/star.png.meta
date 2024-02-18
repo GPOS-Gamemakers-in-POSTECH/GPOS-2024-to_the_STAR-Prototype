@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 059c5046482ed5c4f871d273b49d7544
+guid: aa5cdc589c692b845b34640ea4bea06c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,19 +81,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,118 +110,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tile_edge_0
+      name: star_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 32
-        height: 32
+        x: 0
+        y: 0
+        width: 8
+        height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -16, y: 16}
-        - {x: -7.4624186, y: 14.552288}
-        - {x: -0.039813995, y: 11.609451}
-        - {x: 6.5757103, y: 6.6056385}
-        - {x: 11.494755, y: -0.115665436}
-        - {x: 14.474674, y: -7.4624176}
-        - {x: 16, y: -16}
-        - {x: 16, y: 16}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d53312eed861b94aa0cf0253e3ee3f7
-      internalID: -1129948593
+      spriteID: 7df92bab3ee1c7a42b73367d11dee257
+      internalID: -890199165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile_edge_1
+      name: star_1
       rect:
         serializedVersion: 2
-        x: 34
-        y: 1
-        width: 32
-        height: 32
+        x: 9
+        y: 0
+        width: 8
+        height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -1, y: -11}
-        - {x: -6, y: -8}
-        - {x: -10, y: -3}
-        - {x: -14, y: 6}
-        - {x: -16, y: 16}
-        - {x: -16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 6, y: -14}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 387e5b395fb10a544a16ee7f16a4daaa
-      internalID: -1787419945
+      spriteID: e1995bf0c16d9ac488f983ae1c9edfda
+      internalID: -1557237165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile_edge_2
+      name: star_2
       rect:
         serializedVersion: 2
-        x: 67
-        y: 1
-        width: 32
-        height: 32
+        x: 18
+        y: 0
+        width: 8
+        height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: 14.406044, y: 6.841501}
-        - {x: 10.574585, y: -2.0515451}
-        - {x: 5.680893, y: -7.5280857}
-        - {x: 0.01726532, y: -11.479988}
-        - {x: -7.6952667, y: -14.164216}
-        - {x: -16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 16}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfceeb1f2cc104444bf80e1063b6be83
-      internalID: 949849177
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile_edge_3
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 1
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: -16, y: 16}
-        - {x: -16, y: -16}
-        - {x: -13.483658, y: -4.513071}
-        - {x: -10.35125, y: 1.849844}
-        - {x: -6.0449295, y: 6.937908}
-        - {x: -1.3130951, y: 10.887598}
-        - {x: 4.047386, y: 13.552288}
-        - {x: 16, y: 16}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 573faa6c24b2d9a4a9997479cb5325f4
-      internalID: -1598807019
+      spriteID: e8c1be87bea29fc42bd7f982693675a6
+      internalID: -1330202215
       vertices: []
       indices: 
       edges: []
@@ -250,10 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tile_edge_0: -1129948593
-      tile_edge_1: -1787419945
-      tile_edge_2: 949849177
-      tile_edge_3: -1598807019
+      star_0: -890199165
+      star_1: -1557237165
+      star_2: -1330202215
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
