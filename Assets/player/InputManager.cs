@@ -43,7 +43,8 @@ public class InputManager : MonoBehaviour
 
     void Start()
     {
-        
+        playerMovementControl = GetComponent<PlayerMovementControl>();
+        interactControl = GetComponent<InteractControl>();
     }
 
     // Update is called once per frame

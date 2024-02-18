@@ -22,7 +22,7 @@ public class PlayerState : MonoBehaviour
         playerStunEffectDefense = 1;
         playerChaosEffectDefense = 10;
         gravityVector = Vector2.down;
-        gravitentialForce = 10.0f;
+        gravitentialForce = 100000.0f;
     }
 
     void Start()
