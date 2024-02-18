@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
 {
     // player data
     private float health = 100.0f;
-    private float moveSpeed = 5f;
+    private float moveSpeed = 3f;
 
     private float stunResistance = 1.0f;
     private float confusionResistance = 10.0f;
@@ -28,6 +28,7 @@ public class PlayerControl : MonoBehaviour
 
     Vector2 movement;
     bool wallCollide = false;
+    double angle;
 
     void Start()
     {
@@ -44,14 +45,17 @@ public class PlayerControl : MonoBehaviour
 
     Vector2 rotationMatrix(float x, float y)
     {
-        float angle = Quaternion.FromToRotation(Vector3.up, PlayerState.gravityVector - new Vector2(0, -1)).eulerAngles.z*2;
-        UnityEngine.Debug.Log(angle);
-        return new Vector2((float)Math.Cos(angle)*x+-1*(float)Math.Sin(angle)*y,(float)Math.Sin(angle)*x+(float)Math.Cos(angle)*y);
+        return new Vector2((float)Math.Cos(angle) *x+-1*(float)Math.Sin(angle) *y,(float)Math.Sin(angle) *x+(float)Math.Cos(angle) *y);
     }
 
     void FixedUpdate()
     {
-        float moveDirection = Input.GetAxis("Horizontal");
+        angle = Quaternion.FromToRotation(Vector3.down, PlayerState.gravityVector).eulerAngles.z;
+        UnityEngine.Debug.Log(angle);
+        angle = (double)((int)((angle +5)/10)*10)/ 180 * Math.PI;
+        transform.rotation = Quaternion.Euler(0, 0, (float)(angle * 180 / Math.PI));
+
+        float moveDirection = Input.GetAxisRaw("Horizontal");
         if (wallCollide)
         {
             movement = rotationMatrix(-1 * moveSpeed * moveDirection, 0);
@@ -61,6 +65,7 @@ public class PlayerControl : MonoBehaviour
             movement = rotationMatrix(moveSpeed * moveDirection, 0);
         }
         rb.velocity = movement;
+        UnityEngine.Debug.Log(movement);
 
         if (moveDirection > 0)
         {

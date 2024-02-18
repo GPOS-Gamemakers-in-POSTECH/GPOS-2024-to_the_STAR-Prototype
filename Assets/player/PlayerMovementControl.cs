@@ -44,6 +44,7 @@ public class PlayerMovementControl : MonoBehaviour
 
     void ApplyGravity(float gravitentialForce)
     {
+        rb.AddForce(PlayerState.gravityVector * gravitentialForce);
         //UnityEngine.Debug.Log(PlayerState.gravityVector);
 
         return;
