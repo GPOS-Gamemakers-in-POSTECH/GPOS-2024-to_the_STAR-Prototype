@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class Change : MonoBehaviour
 {
+    public GameObject HowToPlay;
+
     // Start is called before the first frame update
     public void SceneChange()
     {
