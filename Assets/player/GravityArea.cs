@@ -47,10 +47,10 @@ public class GravityArea : MonoBehaviour
     {
         // Add all areas and map ids of area.
         string upper_key = string.Format("{0} {1} {2} {3}",
-            Mathf.Floor(PlayerState.playerCoordinateVector.x),
-            Mathf.Floor(PlayerState.playerCoordinateVector.y - 0.3f),
-            Mathf.Ceil(PlayerState.playerCoordinateVector.x),
-            Mathf.Ceil(PlayerState.playerCoordinateVector.y - 0.3f));
+            Mathf.Floor(PlayerState.playerCoordinateVector.x + 0.3f * PlayerState.gravityVector.x),
+            Mathf.Floor(PlayerState.playerCoordinateVector.y + 0.3f * PlayerState.gravityVector.y),
+            Mathf.Ceil(PlayerState.playerCoordinateVector.x + 0.3f  * PlayerState.gravityVector.x),
+            Mathf.Ceil(PlayerState.playerCoordinateVector.y + 0.3f * PlayerState.gravityVector.y));
 
         if (dictOfGravitySource.ContainsKey(upper_key))
         {
@@ -68,10 +68,10 @@ public class GravityArea : MonoBehaviour
 
         // Add all areas and map ids of area.
         string lower_key = string.Format("{0} {1} {2} {3}",
-            Mathf.Floor(PlayerState.playerCoordinateVector.x),
-            Mathf.Floor(PlayerState.playerCoordinateVector.y - 0.7f),
-            Mathf.Ceil(PlayerState.playerCoordinateVector.x),
-            Mathf.Ceil(PlayerState.playerCoordinateVector.y - 0.7f));
+            Mathf.Floor(PlayerState.playerCoordinateVector.x + 0.7f * PlayerState.gravityVector.x),
+            Mathf.Floor(PlayerState.playerCoordinateVector.y + 0.7f * PlayerState.gravityVector.y),
+            Mathf.Ceil(PlayerState.playerCoordinateVector.x + 0.7f * PlayerState.gravityVector.x),
+            Mathf.Ceil(PlayerState.playerCoordinateVector.y + 0.7f * PlayerState.gravityVector.y));
 
         if (dictOfGravitySource.ContainsKey(lower_key))
         {
