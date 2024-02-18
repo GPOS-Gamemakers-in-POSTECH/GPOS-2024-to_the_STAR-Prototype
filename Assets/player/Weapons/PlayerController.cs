@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,9 @@ public class PlayerControl : MonoBehaviour
     public bool tongsOn = false;
     public bool flamethrowerOn = false;
 
+    Vector2 movement;
+    bool wallCollide = false;
+
     void Start()
     {
         gameObject.tag = "player";
@@ -38,10 +42,25 @@ public class PlayerControl : MonoBehaviour
         tongs = transform.GetChild(2).gameObject;
     }
 
+    Vector2 rotationMatrix(float x, float y)
+    {
+        float angle = Quaternion.FromToRotation(Vector3.up, PlayerState.gravityVector - new Vector2(0, -1)).eulerAngles.z*2;
+        UnityEngine.Debug.Log(angle);
+        return new Vector2((float)Math.Cos(angle)*x+-1*(float)Math.Sin(angle)*y,(float)Math.Sin(angle)*x+(float)Math.Cos(angle)*y);
+    }
+
     void FixedUpdate()
     {
         float moveDirection = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
+        if (wallCollide)
+        {
+            movement = rotationMatrix(-1 * moveSpeed * moveDirection, 0);
+        }
+        else
+        {
+            movement = rotationMatrix(moveSpeed * moveDirection, 0);
+        }
+        rb.velocity = movement;
 
         if (moveDirection > 0)
         {
@@ -82,4 +101,21 @@ public class PlayerControl : MonoBehaviour
         }
 
     }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "wall") //벽과 충돌
+        {
+            wallCollide = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "wall") //벽과 충돌
+        {
+            wallCollide = false;
+        }
+    }
+
 }
