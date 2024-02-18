@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ public class PlayerControl : MonoBehaviour
 {
     // player data
     private float health = 100.0f;
-    private float moveSpeed = 5f;
+    private float moveSpeed = 3f;
 
     private float stunResistance = 1.0f;
     private float confusionResistance = 10.0f;
@@ -25,6 +26,10 @@ public class PlayerControl : MonoBehaviour
     public bool tongsOn = false;
     public bool flamethrowerOn = false;
 
+    Vector2 movement;
+    bool wallCollide = false;
+    double angle;
+
     void Start()
     {
         gameObject.tag = "player";
@@ -38,10 +43,29 @@ public class PlayerControl : MonoBehaviour
         tongs = transform.GetChild(2).gameObject;
     }
 
+    Vector2 rotationMatrix(float x, float y)
+    {
+        return new Vector2((float)Math.Cos(angle) *x+-1*(float)Math.Sin(angle) *y,(float)Math.Sin(angle) *x+(float)Math.Cos(angle) *y);
+    }
+
     void FixedUpdate()
     {
-        float moveDirection = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
+        angle = Quaternion.FromToRotation(Vector3.down, PlayerState.gravityVector).eulerAngles.z;
+        UnityEngine.Debug.Log(angle);
+        angle = (double)((int)((angle +5)/10)*10)/ 180 * Math.PI;
+        transform.rotation = Quaternion.Euler(0, 0, (float)(angle * 180 / Math.PI));
+
+        float moveDirection = Input.GetAxisRaw("Horizontal");
+        if (wallCollide)
+        {
+            movement = rotationMatrix(-1 * moveSpeed * moveDirection, 0);
+        }
+        else
+        {
+            movement = rotationMatrix(moveSpeed * moveDirection, 0);
+        }
+        rb.velocity = movement;
+        UnityEngine.Debug.Log(movement);
 
         if (moveDirection > 0)
         {
@@ -82,4 +106,21 @@ public class PlayerControl : MonoBehaviour
         }
 
     }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "wall") //벽과 충돌
+        {
+            wallCollide = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "wall") //벽과 충돌
+        {
+            wallCollide = false;
+        }
+    }
+
 }

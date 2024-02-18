@@ -19,7 +19,7 @@ public class GravityDirectionControl : MonoBehaviour
     void FixedUpdate()
     {
         UpdateGravityVector();
-        Debug.Log(PlayerState.gravityVector);
+        //Debug.Log(PlayerState.gravityVector);
     }
 
     public void UpdateGravityVector()
