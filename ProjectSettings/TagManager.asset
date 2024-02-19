@@ -10,6 +10,7 @@ TagManager:
   - playerWeapon
   - enemyWeapon
   - object
+  - wall2
   layers:
   - Default
   - TransparentFX

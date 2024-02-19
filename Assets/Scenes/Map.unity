@@ -3896,7 +3896,7 @@ GameObject:
   - component: {fileID: 1119379460}
   m_Layer: 0
   m_Name: Plat_MovC
-  m_TagString: wall
+  m_TagString: wall2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7625,7 +7625,7 @@ GameObject:
   - component: {fileID: 1888095123}
   m_Layer: 0
   m_Name: Plat_MovA
-  m_TagString: wall
+  m_TagString: wall2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7903,7 +7903,7 @@ GameObject:
   - component: {fileID: 1925371140}
   m_Layer: 0
   m_Name: Plat_MovB
-  m_TagString: wall
+  m_TagString: wall2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24153,7 +24153,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2111661144
@@ -24253,7 +24253,7 @@ GameObject:
   - component: {fileID: 2143639568}
   m_Layer: 0
   m_Name: Plat_MovD
-  m_TagString: wall
+  m_TagString: wall2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

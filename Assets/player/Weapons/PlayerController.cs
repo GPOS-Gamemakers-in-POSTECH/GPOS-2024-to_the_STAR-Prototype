@@ -27,7 +27,9 @@ public class PlayerControl : MonoBehaviour
     public bool flamethrowerOn = false;
 
     Vector2 movement;
+    Vector2 movement2;
     bool wallCollide = false;
+    bool wall2Collide = false;
     double angle;
     int tole = 25;
 
@@ -82,8 +84,16 @@ public class PlayerControl : MonoBehaviour
         {
             movement = rotationMatrix(moveSpeed * moveDirection, 0);
         }
+        if (wall2Collide)
+        {
+            movement2 = PlayerState.gravityVector * moveSpeed * (1.5f - Math.Abs(moveDirection)) * -1;
+        }
+        else
+        {
+            movement2 = PlayerState.gravityVector * moveSpeed * (1.5f - Math.Abs(moveDirection));
+        }
         //rb.velocity = movement;
-        rb.velocity = movement + PlayerState.gravityVector * moveSpeed * (1.5f - Math.Abs(moveDirection));
+        rb.velocity = movement + movement2;
         //UnityEngine.Debug.Log(movement);
 
         if (moveDirection > 0)
@@ -132,6 +142,10 @@ public class PlayerControl : MonoBehaviour
         {
             wallCollide = true;
         }
+        if (other.gameObject.tag == "wall2")
+        {
+            wall2Collide = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -139,6 +153,10 @@ public class PlayerControl : MonoBehaviour
         if (other.gameObject.tag == "wall") //벽과 충돌
         {
             wallCollide = false;
+        }
+        if (other.gameObject.tag == "wall2")
+        {
+            wall2Collide = false;
         }
     }
 
