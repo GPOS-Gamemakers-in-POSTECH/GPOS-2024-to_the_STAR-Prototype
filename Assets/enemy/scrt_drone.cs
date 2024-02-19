@@ -60,7 +60,7 @@ public class scrt_drone : MonoBehaviour, IEnemyCommon
         {
             case 0: 
                 Move();
-                if (delay <= 0) //일정 주기마다 움직이는 방향 변경
+                if (delay <= 0 && !wallCollide) //일정 주기마다 움직이는 방향 변경
                 {
                     delay = UnityEngine.Random.Range(120, 601);
                     direction = UnityEngine.Random.Range(-1, 2);
@@ -106,7 +106,7 @@ public class scrt_drone : MonoBehaviour, IEnemyCommon
             if (floorLoc - 2 != Math.Sign(player.transform.position.x - this.transform.position.x)) { alertOn = false; }
             if (direction != 0) { spriteRenderer.flipX = (direction == floorLoc - 2); }
         }
-
+        if (wallCollide) { direction = 0; }
         transform.Translate(moveVector * direction * speed * Time.deltaTime, Space.World);
 
         if (direction != 0) { animator.SetBool("bool_move", true); }
