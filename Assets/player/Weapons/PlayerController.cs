@@ -29,7 +29,7 @@ public class PlayerControl : MonoBehaviour
     Vector2 movement;
     bool wallCollide = false;
     double angle;
-    int tole = 10;
+    int tole = 25;
 
     void Start()
     {
