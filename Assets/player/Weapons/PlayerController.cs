@@ -29,6 +29,7 @@ public class PlayerControl : MonoBehaviour
     Vector2 movement;
     bool wallCollide = false;
     double angle;
+    int tole = 10;
 
     void Start()
     {
@@ -51,12 +52,19 @@ public class PlayerControl : MonoBehaviour
     void FixedUpdate()
     {
         angle = Quaternion.FromToRotation(Vector3.down, PlayerState.gravityVector).eulerAngles.z;
-        //UnityEngine.Debug.Log(PlayerState.gravityVector);
+        UnityEngine.Debug.Log(angle);
 
         if (PlayerState.gravityVector.y == 1) { angle = 180.0; }
         else if (PlayerState.gravityVector.y == -1) { angle = 0.0; }
         else if (PlayerState.gravityVector.x == 1) { angle = 90.0; }
         else if (PlayerState.gravityVector.x == -1) { angle = 270.0; }
+
+        if (Math.Abs(angle) < tole) { angle = 0; }
+        else if (Math.Abs(angle - 90) < tole) { angle = 90; }
+        else if (Math.Abs(angle - 180) < tole) { angle = 180; }
+        else if (Math.Abs(angle - 270) < tole) { angle = 270; }
+        else if (Math.Abs(angle - 360) < tole) { angle = 360; }
+
 
         transform.rotation = Quaternion.Euler(0, 0, (float)(angle));
         angle = angle / 180 * Math.PI;
