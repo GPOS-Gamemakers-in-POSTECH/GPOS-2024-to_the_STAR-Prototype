@@ -43,7 +43,8 @@ public class InputManager : MonoBehaviour
 
     void Start()
     {
-        
+        playerMovementControl = GetComponent<PlayerMovementControl>();
+        interactControl = GetComponent<InteractControl>();
     }
 
     // Update is called once per frame
@@ -52,11 +53,13 @@ public class InputManager : MonoBehaviour
         if (Input.GetKeyDown(keyCodeGoLeft))
         {
             playerMovementControl.MoveLeft(PlayerState.playerMoveSpeed);
+            Debug.Log("left");
         }
 
         if (Input.GetKeyDown(keyCodeGoRight))
         {
             playerMovementControl.MoveRight(PlayerState.playerMoveSpeed);
+            Debug.Log("right");
         }
 
         if (Input.GetKeyDown(keyCodeInteraction))

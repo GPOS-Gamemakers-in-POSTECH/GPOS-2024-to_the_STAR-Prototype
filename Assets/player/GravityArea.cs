@@ -7,7 +7,7 @@ public class GravityArea : MonoBehaviour
 
     Dictionary<string, (Vector2, Vector2, Vector2, int)> dictOfGravitySource;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         dictOfGravitySource = new Dictionary<string, (Vector2, Vector2, Vector2, int)>();
 

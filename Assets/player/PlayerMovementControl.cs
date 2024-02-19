@@ -29,16 +29,18 @@ public class PlayerMovementControl : MonoBehaviour
     public void MoveLeft(float moveSpeed)
     {
         Vector2 leftVector = new Vector2(PlayerState.gravityVector.y, -PlayerState.gravityVector.x);
-        transform.Translate(leftVector);
-
+        //transform.Translate(leftVector * Time.deltaTime);
+        rb.AddForce(leftVector* 1000);
+        
         return;
     }
 
     public void MoveRight(float moveSpeed)
     {
         Vector2 rightVector = new Vector2(-PlayerState.gravityVector.y, -PlayerState.gravityVector.x);
-        transform.Translate(rightVector);
-
+        //transform.Translate(rightVector * Time.deltaTime);
+        rb.AddForce(rightVector * 1000);
+        
         return;
     }
 
