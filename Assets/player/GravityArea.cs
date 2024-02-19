@@ -7,10 +7,14 @@ public class GravityArea : MonoBehaviour
 
     Dictionary<string, (Vector2, Vector2, Vector2, int)> dictOfGravitySource;
 
-    public GameObject lever1;
+    public GameObject lever2_1;
     public GameObject lever2;
-    scrt_lever leverComponent1;
+    public GameObject lever3;
+    public GameObject lever5;
+    scrt_lever leverComponent2_1;
     scrt_lever leverComponent2;
+    scrt_lever leverComponent3;
+    scrt_lever leverComponent5;
 
     // Start is called before the first frame update
     void Awake()
@@ -43,18 +47,21 @@ public class GravityArea : MonoBehaviour
         dictOfGravitySource.Add("22 -28 23 -27", (new Vector2(22, -28), new Vector2(23, -27), new Vector2(23, -28), 1));
         dictOfGravitySource.Add("21 -31 22 -30", (new Vector2(21, -31), new Vector2(22, -30), new Vector2(21, -30), -1));
         dictOfGravitySource.Add("-10 -31 -9 -30", (new Vector2(-10, -31), new Vector2(-9, -30), new Vector2(-9, -30), -1));
-        dictOfGravitySource.Add("-11 -28 -10 -27", (new Vector2(-11, 28), new Vector2(-10, -27), new(-11, 28), 1));
+        dictOfGravitySource.Add("-11 -28 -10 -27", (new Vector2(-11, -28), new Vector2(-10, -27), new(-11, -28), 1));
         dictOfGravitySource.Add("-19 -27 -18 -26", (new Vector2(-19, -27), new Vector2(-18, -26), new Vector2(-18, -26), -1));
 
     }
 
     void Start()
     {
-        lever1 = GameObject.Find("Lever2 (1)");
-        lever2 = GameObject.Find("Lever5");
-        leverComponent1 = lever1.GetComponent<scrt_lever>();
+        lever2_1 = GameObject.Find("Lever2 (1)");
+        lever2 = GameObject.Find("Lever2");
+        lever3 = GameObject.Find("Lever3");
+        lever5 = GameObject.Find("Lever5");
+        leverComponent2_1 = lever2_1.GetComponent<scrt_lever>();
         leverComponent2 = lever2.GetComponent<scrt_lever>();
-
+        leverComponent3 = lever3.GetComponent<scrt_lever>();
+        leverComponent5 = lever5.GetComponent<scrt_lever>();
     }
 
     void FixedUpdate()
@@ -100,7 +107,7 @@ public class GravityArea : MonoBehaviour
             PlayerState.gravitySourceVector = new Vector2(0, 0); // naive exception.
         }
 
-        if (leverComponent1.leverCode == 0)
+        if (leverComponent2_1.leverCode == 0)
         {
             if (dictOfGravitySource.ContainsKey("17 -11 18 -10"))
             {
@@ -123,6 +130,68 @@ public class GravityArea : MonoBehaviour
     
         if (leverComponent2.leverCode == 0)
         {
+            if (!dictOfGravitySource.ContainsKey("18 -20 19 -19"))
+            {
+                Debug.Log("Gravity Source On");
+
+                dictOfGravitySource.Add("18 -20 19 -19", (new Vector2(18, -20), new Vector2(19, -19), new Vector2(19, -19), -1));
+            }
+        }
+
+        else
+        {
+            if (dictOfGravitySource.ContainsKey("18 -20 19 -19"))
+            {
+                Debug.Log("Gravity Source Off");
+
+                dictOfGravitySource.Remove("18 -20 19 -19");
+            }
+        }
+
+        if (leverComponent3.leverCode == 0)
+        {
+            if (!dictOfGravitySource.ContainsKey("26 -20 27 -19"))
+            {
+                Debug.Log("Gravity Source On");
+
+                dictOfGravitySource.Add("26 -20 27 -19", (new Vector2(26, -20), new Vector2(27, -19), new Vector2(26, -19), -1));
+            }
+        }
+
+        else
+        {
+            if (dictOfGravitySource.ContainsKey(""))
+            {
+                Debug.Log("Gravity Source Off");
+
+                dictOfGravitySource.Remove("26 -20 27 -19");
+            }
+        }
+
+        /*
+        if (leverComponent3.leverCode == 0)
+        {
+            if (!dictOfGravitySource.ContainsKey(""))
+            {
+                Debug.Log("Gravity Source On");
+
+                dictOfGravitySource.Add("", (new Vector2(), new Vector2(), new Vector2(), -1));
+            }
+        }
+
+        else
+        {
+            if (dictOfGravitySource.ContainsKey(""))
+            {
+                Debug.Log("Gravity Source Off");
+
+                dictOfGravitySource.Remove("");
+            }
+        }
+         */
+
+        if (leverComponent5.leverCode == 0)
+        {
             if (dictOfGravitySource.ContainsKey("-20 -11 -19 -10"))
             {
                 Debug.Log("Gravity Source Off");
@@ -140,6 +209,9 @@ public class GravityArea : MonoBehaviour
                 dictOfGravitySource.Add("-20 -11 -19 -10", (new Vector2(-20, -11), new Vector2(-19, -10), new Vector2(-20, -11), 1));
             }
         }
+
+        
+
 
         //Debug.Log(PlayerState.gravityVector);
     }
