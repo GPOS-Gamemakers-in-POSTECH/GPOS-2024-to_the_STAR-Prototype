@@ -32,10 +32,12 @@ public class scrt_lever : MonoBehaviour
             whatObj.transform.rotation = Quaternion.Euler(0f, 0f, (4 - remoteFloorLoc) * 90f);
             whatObj.transform.position = new Vector3(obx, oby, 0);
             animator.SetBool("bool_On", false);
+            spriteRenderer.flipX = false;
         }
         else
         {
             animator.SetBool("bool_On", true);
+            spriteRenderer.flipX = true;
         }
     }
 
@@ -50,13 +52,15 @@ public class scrt_lever : MonoBehaviour
         {
             whatObj.transform.position = new Vector3(orix, oriy, 0);
             leverCode = 1;
-            animator.SetBool("bool_On", false);
+            animator.SetBool("bool_On", true);
+            spriteRenderer.flipX = true;
         }
         else //»ý¼º
         {
             whatObj.transform.position = new Vector3(obx, oby, 0);
             leverCode = 0;
-            animator.SetBool("bool_On", true);
+            animator.SetBool("bool_On", false);
+            spriteRenderer.flipX = false;
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ public class PlayerControl : MonoBehaviour
 {
     // player data
     private float health = 100.0f;
-    private float moveSpeed = 5f;
+    private float moveSpeed = 4f;
 
     private float stunResistance = 1.0f;
     private float confusionResistance = 10.0f;
@@ -25,6 +26,11 @@ public class PlayerControl : MonoBehaviour
     public bool tongsOn = false;
     public bool flamethrowerOn = false;
 
+    Vector2 movement;
+    bool wallCollide = false;
+    double angle;
+    int tole = 25;
+
     void Start()
     {
         gameObject.tag = "player";
@@ -36,12 +42,49 @@ public class PlayerControl : MonoBehaviour
         hammer = transform.GetChild(0).gameObject;
         flamethrower = transform.GetChild(1).gameObject;
         tongs = transform.GetChild(2).gameObject;
+
+        hammer.SetActive(false);
+        flamethrower.SetActive(false);
+        tongs.SetActive(false);
+    }
+
+    Vector2 rotationMatrix(float x, float y)
+    {
+        return new Vector2((float)Math.Cos(angle) *x+-1*(float)Math.Sin(angle) *y,(float)Math.Sin(angle) *x+(float)Math.Cos(angle) *y);
     }
 
     void FixedUpdate()
     {
-        float moveDirection = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
+        angle = Quaternion.FromToRotation(Vector3.down, PlayerState.gravityVector).eulerAngles.z;
+        //UnityEngine.Debug.Log(angle);
+
+        if (PlayerState.gravityVector.y == 1) { angle = 180.0; }
+        else if (PlayerState.gravityVector.y == -1) { angle = 0.0; }
+        else if (PlayerState.gravityVector.x == 1) { angle = 90.0; }
+        else if (PlayerState.gravityVector.x == -1) { angle = 270.0; }
+
+        if (Math.Abs(angle) < tole) { angle = 0; }
+        else if (Math.Abs(angle - 90) < tole) { angle = 90; }
+        else if (Math.Abs(angle - 180) < tole) { angle = 180; }
+        else if (Math.Abs(angle - 270) < tole) { angle = 270; }
+        else if (Math.Abs(angle - 360) < tole) { angle = 360; }
+
+
+        transform.rotation = Quaternion.Euler(0, 0, (float)(angle));
+        angle = angle / 180 * Math.PI;
+
+        float moveDirection = Input.GetAxisRaw("Horizontal");
+        if (wallCollide)
+        {
+            movement = rotationMatrix(-1 * moveSpeed * moveDirection, 0);
+        }
+        else
+        {
+            movement = rotationMatrix(moveSpeed * moveDirection, 0);
+        }
+        //rb.velocity = movement;
+        rb.velocity = movement + PlayerState.gravityVector * moveSpeed * (1.5f - Math.Abs(moveDirection));
+        //UnityEngine.Debug.Log(movement);
 
         if (moveDirection > 0)
         {
@@ -82,4 +125,21 @@ public class PlayerControl : MonoBehaviour
         }
 
     }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "wall") //벽과 충돌
+        {
+            wallCollide = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "wall") //벽과 충돌
+        {
+            wallCollide = false;
+        }
+    }
+
 }

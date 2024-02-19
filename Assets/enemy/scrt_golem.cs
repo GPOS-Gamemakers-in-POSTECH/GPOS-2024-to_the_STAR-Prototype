@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class scrt_golem : MonoBehaviour, IEnemyCommon
 {
-    float attack = 20f; //공격력
+    float attack = 70f; //공격력
     float health = 100f; //체력
     float speed = 0.025f; //골렘 한쪽 다리의 이동 속도
     float walkLength = 1f; //골렘 한쪽 다리가 최대한 이동할 거리
@@ -13,12 +13,12 @@ public class scrt_golem : MonoBehaviour, IEnemyCommon
     float golemLegY = -1.25f;
     float attackX = 1.05f; //공격 오브젝트를 만들 좌표, 기준점은 golemLeg과 동일
     float attackY = -1.25f;
-    float detectionRangeX = 40f; //가로탐지범위
-    float detectionRangeY = 15f; //세로탐지범위
-    float attackRange = 10f; //공격범위
+    float detectionRangeX = 10f; //가로탐지범위
+    float detectionRangeY = 3.5f; //세로탐지범위
+    float attackRange = 1.5f; //공격범위
     float attackAngle = 0.5f; //공격시 다리를 들 최대 높이
     float attackLegSpeed = 0.005f; //공격시 다리를 들 속도
-    int attackDelay = 60; //공격후 이동 딜레이
+    int attackDelay = 90; //공격후 이동 딜레이
     int attackTime = 20; //공격지속시간
     public int floorLoc = 0; //딛고 있는 바닥의 위치, 0: 바닥, 1: 왼쪽벽 2: 천장 3: 오른쪽벽
 
