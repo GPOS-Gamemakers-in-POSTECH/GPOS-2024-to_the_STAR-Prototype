@@ -6,6 +6,12 @@ public class GravityArea : MonoBehaviour
 {
 
     Dictionary<string, (Vector2, Vector2, Vector2, int)> dictOfGravitySource;
+
+    public GameObject lever1;
+    public GameObject lever2;
+    scrt_lever leverComponent1;
+    scrt_lever leverComponent2;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -42,6 +48,14 @@ public class GravityArea : MonoBehaviour
 
     }
 
+    void Start()
+    {
+        lever1 = GameObject.Find("Lever2 (1)");
+        lever2 = GameObject.Find("Lever5");
+        leverComponent1 = lever1.GetComponent<scrt_lever>();
+        leverComponent2 = lever2.GetComponent<scrt_lever>();
+
+    }
 
     void FixedUpdate()
     {
@@ -85,5 +99,48 @@ public class GravityArea : MonoBehaviour
         {
             PlayerState.gravitySourceVector = new Vector2(0, 0); // naive exception.
         }
+
+        if (leverComponent1.leverCode == 0)
+        {
+            if (dictOfGravitySource.ContainsKey("17 -11 18 -10"))
+            {
+                Debug.Log("Gravity Source Off");
+
+                dictOfGravitySource.Remove("17 -11 18 -10");
+            }
+
+        }
+
+        else
+        {
+            if(!dictOfGravitySource.ContainsKey("17 -11 18 -10"))
+            {
+                Debug.Log("Gravity Source On");
+
+                dictOfGravitySource.Add("17 -11 18 -10", (new Vector2(17, -11), new Vector2(18, -10), new Vector2(17, -10), 1));
+            }
+        }
+    
+        if (leverComponent2.leverCode == 0)
+        {
+            if (dictOfGravitySource.ContainsKey("-20 -11 -19 -10"))
+            {
+                Debug.Log("Gravity Source Off");
+
+                dictOfGravitySource.Remove("-20 -11 -19 -10");
+            }
+        }
+
+        else
+        {
+            if (!dictOfGravitySource.ContainsKey("-20 -11 -19 -10"))
+            {
+                Debug.Log("Gravity Source On");
+
+                dictOfGravitySource.Add("-20 -11 -19 -10", (new Vector2(-20, -11), new Vector2(-19, -10), new Vector2(-20, -11), 1));
+            }
+        }
+
+        Debug.Log(PlayerState.gravityVector);
     }
 }
