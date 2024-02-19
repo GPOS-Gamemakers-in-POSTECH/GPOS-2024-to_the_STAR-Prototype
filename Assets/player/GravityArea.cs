@@ -16,7 +16,7 @@ public class GravityArea : MonoBehaviour
         dictOfGravitySource.Add("-33 39 -32 40", (new Vector2(-33, 39), new Vector2(-32, 40), new Vector2(-32, 39), -1));
         dictOfGravitySource.Add("1 39 2 40", (new Vector2(1, 39), new Vector2(2, 40), new Vector2(1, 39), -1));
         dictOfGravitySource.Add("-33 25 -32 26", (new Vector2(-33, 25), new Vector2(-32, 26), new Vector2(-32, 26), -1));
-        dictOfGravitySource.Add("1 25 2 26", (new Vector2(1, 25), new Vector2(2, 26), new Vector2(2, 26), -1));
+        dictOfGravitySource.Add("1 25 2 26", (new Vector2(1, 25), new Vector2(2, 26), new Vector2(1, 26), -1));
         dictOfGravitySource.Add("-26 24 -25 25", (new Vector2(-26, 24), new Vector2(-25, 25), new Vector2(-26, 24), 1));
         dictOfGravitySource.Add("-23 24 -22 25", (new Vector2(-23, 24), new Vector2(-22, 25), new Vector2(-22, 24), 1));
         dictOfGravitySource.Add("-23 19 -22 20", (new Vector2(-23, 19), new Vector2(-22, 20), new Vector2(-22, 20), 1));
@@ -24,7 +24,7 @@ public class GravityArea : MonoBehaviour
         dictOfGravitySource.Add("-20 -11 -19 -10", (new Vector2(-20, -11), new Vector2(-19, -10), new Vector2(-20, -11), 1));
         dictOfGravitySource.Add("-11 -10 -10 -9", (new Vector2(-11, -10), new Vector2(-10, -9), new Vector2(-11, -9), -1));
         dictOfGravitySource.Add("-10 -5 -9 -4", (new Vector2(-10, -5), new Vector2(-9, -4), new Vector2(-9, -5), 1));
-        dictOfGravitySource.Add("-3 -2 -2 -1", (new Vector2(-3, -2), new Vector2(-2, -1), new Vector2(-3, -1), 1));
+        dictOfGravitySource.Add("-3 -2 -2 -1", (new Vector2(-3, -2), new Vector2(-2, -1), new Vector2(-2, -2), 1));
         dictOfGravitySource.Add("-4 -4 -3 -3", (new Vector2(-4, -4), new Vector2(-3, -3), new Vector2(-4, -3), -1));
         dictOfGravitySource.Add("3 -2 4 -1", (new Vector2(3, -2), new Vector2(4, -1), new Vector2(3, -2), 1));
         dictOfGravitySource.Add("4 -4 5 -3", (new Vector2(4, -4), new Vector2(5, -3), new Vector2(5, -3), -1));
