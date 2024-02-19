@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
 {
     // player data
     private float health = 100.0f;
-    private float moveSpeed = 3f;
+    private float moveSpeed = 4f;
 
     private float stunResistance = 1.0f;
     private float confusionResistance = 10.0f;
@@ -64,7 +64,7 @@ public class PlayerControl : MonoBehaviour
         {
             movement = rotationMatrix(moveSpeed * moveDirection, 0);
         }
-        rb.velocity = movement + PlayerState.gravityVector;
+        rb.velocity = movement + PlayerState.gravityVector * moveSpeed * (1.5f-Math.Abs(moveDirection));
         //UnityEngine.Debug.Log(movement);
 
         if (moveDirection > 0)
