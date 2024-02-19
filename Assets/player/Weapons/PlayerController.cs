@@ -42,6 +42,10 @@ public class PlayerControl : MonoBehaviour
         hammer = transform.GetChild(0).gameObject;
         flamethrower = transform.GetChild(1).gameObject;
         tongs = transform.GetChild(2).gameObject;
+
+        hammer.SetActive(false);
+        flamethrower.SetActive(false);
+        tongs.SetActive(false);
     }
 
     Vector2 rotationMatrix(float x, float y)
@@ -85,14 +89,14 @@ public class PlayerControl : MonoBehaviour
         if (moveDirection > 0)
         {
             sr.flipX = true;
-            //hammer.transform.localPosition = new Vector3(0.5f, 0, 0);
-            //hammer.transform.localScale = new Vector3(1, 1, 1);
+            hammer.transform.localPosition = new Vector3(0.5f, 0, 0);
+            hammer.transform.localScale = new Vector3(1, 1, 1);
         }
         else if (moveDirection < 0)
         {
             sr.flipX = false;
-            //hammer.transform.localPosition = new Vector3(-0.5f, 0, 0);
-            //hammer.transform.localScale = new Vector3(-1, 1, 1);
+            hammer.transform.localPosition = new Vector3(-0.5f, 0, 0);
+            hammer.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
