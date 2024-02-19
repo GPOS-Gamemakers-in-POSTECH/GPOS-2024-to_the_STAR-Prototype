@@ -8,15 +8,15 @@ using UnityEngine;
 public class scrt_drone : MonoBehaviour, IEnemyCommon
 {
     //능력치
-    float attack = 20f; //공격력
-    float health = 100f; //체력
+    float attack = 30f; //공격력
+    float health = 60f; //체력
     float speed = 2f; //이동속력
-    float detectionRangeX = 20f; //가로탐지범위
-    float detectionRangeY = 10f; //세로탐지범위
-    float attackRange = 10f; //공격범위
-    float bulletSpeed = 5f; //총알의 속도
-    int attackDelay = 60; //공격딜레이
-    int attackTime = 20; //공격지속시간
+    float detectionRangeX = 6f; //가로탐지범위
+    float detectionRangeY = 2f; //세로탐지범위
+    float attackRange = 18f; //공격범위
+    float bulletSpeed = 9f; //총알의 속도
+    int attackDelay = 150; //공격딜레이
+    int attackTime = 10; //공격지속시간
     public int floorLoc = 0; //딛고 있는 바닥의 위치, 0: 바닥, 1: 왼쪽벽 2: 천장 3: 오른쪽벽
 
     int state = 0; //0: normal, 1: alert, 2: stunned, 3: dead

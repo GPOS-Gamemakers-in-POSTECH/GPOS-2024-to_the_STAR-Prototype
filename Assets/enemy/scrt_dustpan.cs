@@ -9,13 +9,13 @@ public class scrt_dustpan : MonoBehaviour, IEnemyCommon
 {
     //능력치
     float attack = 20f; //공격력
-    float health = 100f; //체력
+    float health = 80f; //체력
     float speed = 2f; //이동속력
-    float detectionRangeX = 20f; //가로탐지범위
-    float detectionRangeY = 5f; //세로탐지범위
-    float attackRange = 4f; //공격범위
-    int attackDelay = 60; //공격딜레이
-    int attackTime = 20; //공격지속시간
+    float detectionRangeX = 3f; //가로탐지범위
+    float detectionRangeY = 1f; //세로탐지범위
+    float attackRange = 0.2f; //공격범위
+    int attackDelay = 120; //공격딜레이
+    int attackTime = 60; //공격지속시간
     public int floorLoc = 0; //딛고 있는 바닥의 위치, 0: 바닥, 1: 왼쪽벽 2: 천장 3: 오른쪽벽
 
     int state = 0; //0: normal, 1: alert, 2: stunned, 3: dead
