@@ -10,6 +10,14 @@
 2. 커뮤니케이션 : Notion, Discord
 3. 개발환경 : Unity 2022.3.17f1
 
+## :card_file_box: Packages
+
+- 2D Sprite
+- 2D Tile Map
+- TextMesh Pro
+- Unity UI
+
+
 
 ## :hammer_and_wrench: Git
 
