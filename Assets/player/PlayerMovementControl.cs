@@ -30,7 +30,8 @@ public class PlayerMovementControl : MonoBehaviour
     {
         Vector2 leftVector = new Vector2(PlayerState.gravityVector.y, -PlayerState.gravityVector.x);
         //transform.Translate(leftVector * Time.deltaTime);
-        rb.AddForce(leftVector* 100);
+        rb.AddForce(leftVector* 1000);
+        
         return;
     }
 
@@ -38,7 +39,8 @@ public class PlayerMovementControl : MonoBehaviour
     {
         Vector2 rightVector = new Vector2(-PlayerState.gravityVector.y, -PlayerState.gravityVector.x);
         //transform.Translate(rightVector * Time.deltaTime);
-        rb.AddForce(rightVector * 100);
+        rb.AddForce(rightVector * 1000);
+        
         return;
     }
 
