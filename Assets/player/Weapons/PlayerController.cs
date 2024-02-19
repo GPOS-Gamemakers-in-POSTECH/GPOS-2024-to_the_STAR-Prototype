@@ -51,7 +51,7 @@ public class PlayerControl : MonoBehaviour
     void FixedUpdate()
     {
         angle = Quaternion.FromToRotation(Vector3.down, PlayerState.gravityVector).eulerAngles.z;
-        UnityEngine.Debug.Log(angle);
+        // UnityEngine.Debug.Log(angle);
         angle = (double)((int)((angle +1)/2)*2)/ 180 * Math.PI;
         transform.rotation = Quaternion.Euler(0, 0, (float)(angle * 180 / Math.PI));
 
