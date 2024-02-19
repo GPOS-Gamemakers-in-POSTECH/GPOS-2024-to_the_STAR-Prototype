@@ -30,7 +30,7 @@ public class scrt_player : MonoBehaviour
     public void Damage(float damage) //데미지를 입는 함수
     {
         health -= damage;
-        //UnityEngine.Debug.Log(health);
+        UnityEngine.Debug.Log(health);
         animator.SetTrigger("trigger_getAttacked");
     }
 

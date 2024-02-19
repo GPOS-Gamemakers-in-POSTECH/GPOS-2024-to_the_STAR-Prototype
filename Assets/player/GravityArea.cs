@@ -141,6 +141,6 @@ public class GravityArea : MonoBehaviour
             }
         }
 
-        Debug.Log(PlayerState.gravityVector);
+        //Debug.Log(PlayerState.gravityVector);
     }
 }

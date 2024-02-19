@@ -14,7 +14,7 @@ public class scrt_drone : MonoBehaviour, IEnemyCommon
     float detectionRangeX = 6f; //가로탐지범위
     float detectionRangeY = 2f; //세로탐지범위
     float attackRange = 18f; //공격범위
-    float bulletSpeed = 9f; //총알의 속도
+    float bulletSpeed = 0.75f; //총알의 속도
     int attackDelay = 150; //공격딜레이
     int attackTime = 10; //공격지속시간
     public int floorLoc = 0; //딛고 있는 바닥의 위치, 0: 바닥, 1: 왼쪽벽 2: 천장 3: 오른쪽벽
