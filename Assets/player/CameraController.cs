@@ -14,8 +14,8 @@ public class CameraController : MonoBehaviour
         Vector3 moveVector = new Vector3(dir.x * cameraSpeed * Time.deltaTime, dir.y * cameraSpeed * Time.deltaTime, 0.0f);
         this.transform.Translate(moveVector);
 
-        int playerRot = (int)(player.transform.rotation).eulerAngles.z;
-        int cameraRot = (int)(this.transform.rotation).eulerAngles.z;
+        float playerRot = (player.transform.rotation).eulerAngles.z;
+        float cameraRot = (this.transform.rotation).eulerAngles.z;
         this.transform.Rotate(new Vector3(0,0,playerRot-cameraRot));
     }
 }

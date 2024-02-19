@@ -58,7 +58,7 @@ public class scrt_dustpan : MonoBehaviour, IEnemyCommon
         {
             case 0: 
                 Move();
-                if (delay <= 0) //일정 주기마다 움직이는 방향 변경
+                if (delay <= 0 && !wallCollide) //일정 주기마다 움직이는 방향 변경
                 {
                     delay = UnityEngine.Random.Range(120, 601);
                     direction = UnityEngine.Random.Range(-1, 2);
@@ -90,7 +90,7 @@ public class scrt_dustpan : MonoBehaviour, IEnemyCommon
             alertOn = (Math.Abs(player.transform.position.y - this.transform.position.y) < detectionRangeX) && (Math.Abs(player.transform.position.x - this.transform.position.x) < detectionRangeY);
             if (direction != 0) { spriteRenderer.flipX = (direction == floorLoc-2); }
         }
-        
+        if (wallCollide) { direction = 0; }
         transform.Translate(moveVector * direction * speed * Time.deltaTime, Space.World);
         
         
