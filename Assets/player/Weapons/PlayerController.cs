@@ -52,8 +52,8 @@ public class PlayerControl : MonoBehaviour
     {
         angle = Quaternion.FromToRotation(Vector3.down, PlayerState.gravityVector).eulerAngles.z;
         UnityEngine.Debug.Log(angle);
-        angle = (double)((int)((angle +1)/2)*2)/ 180 * Math.PI;
-        transform.rotation = Quaternion.Euler(0, 0, (float)(angle * 180 / Math.PI));
+        transform.rotation = Quaternion.Euler(0, 0, (float)(angle));
+        angle = angle / 180 * Math.PI;
 
         float moveDirection = Input.GetAxisRaw("Horizontal");
         if (wallCollide)
@@ -64,7 +64,7 @@ public class PlayerControl : MonoBehaviour
         {
             movement = rotationMatrix(moveSpeed * moveDirection, 0);
         }
-        rb.velocity = movement;
+        rb.velocity = movement + PlayerState.gravityVector;
         //UnityEngine.Debug.Log(movement);
 
         if (moveDirection > 0)
