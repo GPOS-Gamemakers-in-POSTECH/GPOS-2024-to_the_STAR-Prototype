@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
 {
     // player data
     private float health = 100.0f;
-    private float moveSpeed = 3f;
+    private float moveSpeed = 4f;
 
     private float stunResistance = 1.0f;
     private float confusionResistance = 10.0f;
@@ -51,9 +51,15 @@ public class PlayerControl : MonoBehaviour
     void FixedUpdate()
     {
         angle = Quaternion.FromToRotation(Vector3.down, PlayerState.gravityVector).eulerAngles.z;
-        UnityEngine.Debug.Log(angle);
-        angle = (double)((int)((angle +1)/2)*2)/ 180 * Math.PI;
-        transform.rotation = Quaternion.Euler(0, 0, (float)(angle * 180 / Math.PI));
+        //UnityEngine.Debug.Log(PlayerState.gravityVector);
+
+        if (PlayerState.gravityVector.y == 1) { angle = 180.0; }
+        else if (PlayerState.gravityVector.y == -1) { angle = 0.0; }
+        else if (PlayerState.gravityVector.x == 1) { angle = 90.0; }
+        else if (PlayerState.gravityVector.x == -1) { angle = 270.0; }
+
+        transform.rotation = Quaternion.Euler(0, 0, (float)(angle));
+        angle = angle / 180 * Math.PI;
 
         float moveDirection = Input.GetAxisRaw("Horizontal");
         if (wallCollide)
@@ -64,7 +70,8 @@ public class PlayerControl : MonoBehaviour
         {
             movement = rotationMatrix(moveSpeed * moveDirection, 0);
         }
-        rb.velocity = movement;
+        //rb.velocity = movement;
+        rb.velocity = movement + PlayerState.gravityVector * moveSpeed * (1.5f - Math.Abs(moveDirection));
         //UnityEngine.Debug.Log(movement);
 
         if (moveDirection > 0)

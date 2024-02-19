@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 134534291}
   - component: {fileID: 134534290}
   - component: {fileID: 134534289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lever2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2357,7 +2357,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &762979116
@@ -2400,7 +2400,7 @@ GameObject:
   - component: {fileID: 789472098}
   - component: {fileID: 789472097}
   - component: {fileID: 789472096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeverP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2603,6 +2603,96 @@ Transform:
   - {fileID: 1961180279}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1037395284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1037395285}
+  - component: {fileID: 1037395287}
+  - component: {fileID: 1037395286}
+  m_Layer: 6
+  m_Name: InteractCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1037395285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037395284}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2026041397}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1037395286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037395284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b6bd58466020d3498c790b282638de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1037395287
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037395284}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 0.4}
+  m_EdgeRadius: 0
 --- !u!1 &1073075631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2616,7 +2706,7 @@ GameObject:
   - component: {fileID: 1073075635}
   - component: {fileID: 1073075634}
   - component: {fileID: 1073075636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lever6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3388,7 +3478,7 @@ GameObject:
   - component: {fileID: 1252681783}
   - component: {fileID: 1252681782}
   - component: {fileID: 1252681784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lever4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3990,7 +4080,7 @@ GameObject:
   - component: {fileID: 1300935794}
   - component: {fileID: 1300935793}
   - component: {fileID: 1300935795}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lever2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4905,7 +4995,7 @@ GameObject:
   - component: {fileID: 1547913960}
   - component: {fileID: 1547913959}
   - component: {fileID: 1547913961}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lever3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5077,7 +5167,7 @@ GameObject:
   - component: {fileID: 1607902996}
   - component: {fileID: 1607902998}
   - component: {fileID: 1607902999}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lever1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5479,7 +5569,7 @@ GameObject:
   - component: {fileID: 1718522894}
   - component: {fileID: 1718522893}
   - component: {fileID: 1718522895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lever5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22091,7 +22181,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1037395285}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2026041398
@@ -22195,6 +22286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8991c096c78f712409c0ce59c0a2181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collidedObject: {fileID: 0}
 --- !u!114 &2026041407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22503,7 +22595,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2111661144

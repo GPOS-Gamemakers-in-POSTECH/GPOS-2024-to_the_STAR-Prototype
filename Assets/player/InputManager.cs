@@ -53,13 +53,13 @@ public class InputManager : MonoBehaviour
         if (Input.GetKeyDown(keyCodeGoLeft))
         {
             playerMovementControl.MoveLeft(PlayerState.playerMoveSpeed);
-            Debug.Log("left");
+            //Debug.Log("left");
         }
 
         if (Input.GetKeyDown(keyCodeGoRight))
         {
             playerMovementControl.MoveRight(PlayerState.playerMoveSpeed);
-            Debug.Log("right");
+            //Debug.Log("right");
         }
 
         if (Input.GetKeyDown(keyCodeInteraction))
