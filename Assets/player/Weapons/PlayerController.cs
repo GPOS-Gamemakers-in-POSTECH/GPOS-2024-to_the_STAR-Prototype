@@ -52,7 +52,7 @@ public class PlayerControl : MonoBehaviour
     void FixedUpdate()
     {
         angle = Quaternion.FromToRotation(Vector3.down, PlayerState.gravityVector).eulerAngles.z;
-        UnityEngine.Debug.Log(angle);
+        //UnityEngine.Debug.Log(angle);
 
         if (PlayerState.gravityVector.y == 1) { angle = 180.0; }
         else if (PlayerState.gravityVector.y == -1) { angle = 0.0; }
